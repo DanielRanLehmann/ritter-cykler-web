@@ -21,9 +21,6 @@ class Footer extends Component {
       return (
         <footer className="white page-footer">
           <div className="container">
-
-            <div className="divider"></div>
-
             <div className="section">
               <div className="row">
                 <div className="col l6 s12">

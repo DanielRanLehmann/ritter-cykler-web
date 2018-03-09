@@ -17,7 +17,6 @@ function Dropdown(props) {
     </ul>
   );
 }
-
 /*
 function HalfwayFAB(props) {
   if (!props.materialIconName) {
@@ -94,6 +93,7 @@ class Navbar extends Component {
             </div>
 
           </nav>
+
         </div>
       );
     }

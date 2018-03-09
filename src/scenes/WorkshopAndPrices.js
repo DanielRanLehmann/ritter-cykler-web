@@ -45,6 +45,8 @@ class WorkshopAndPrices extends Component {
           </div>
         </div>
 
+        <div className="divider"></div>
+
       </div>
     );
   }

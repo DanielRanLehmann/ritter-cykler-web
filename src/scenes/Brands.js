@@ -141,6 +141,7 @@ class Brands extends Component {
             />
           </div>
         </div>
+        <div className="divider"></div>
       </div>
     );
   }
