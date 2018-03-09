@@ -38,7 +38,7 @@ class Contact extends Component {
             <div className="col s12 m6">
               <div className="white">
                 <div>
-                  <h6 className="primary-text headline">Information</h6>
+                  <h6 className="primary-text title">Information</h6>
                   <p className="primary-text body-1"><i className="left inline-small-icon material-icons green-text text-accent-3">location_on</i>Lyngby Storcenter 88, 2800 Kongens Lyngby *</p>
                   <p className="primary-text body-1"><i className="left inline-small-icon material-icons green-text text-accent-3">phone</i>45 87 66 01</p>
                   <p className="primary-text body-1"><i className="left inline-small-icon material-icons green-text text-accent-3">email</i>info@rittercykler.dk</p>
@@ -60,7 +60,8 @@ class Contact extends Component {
             </div>
 
             <div className="col s12 m6">
-              <h6 className="primary-text headline">Skriv til os</h6>
+              <h6 className="primary-text title">Send os en besked</h6>
+              <p className="secondary-text body-1">Du kan forvente en svartid på 1-2 arbejdsdage.</p>
               <ContactForm />
             </div>
 
