@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.display-1 {
+  font-size: 34pt !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.headline-light {
+  font-size: 24pt;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 300;
+}
+
+.headline {
+  font-size: 24pt;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400;
+}
+
+.fancy-headline {
+  font-size: 24pt;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 900;
+}
+
+.subheading {
+  font-size: 16pt;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.title {
+  font-size: 20pt !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.body-1 {
+  font-size: 13pt !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.body-2 {
+  font-size: 14pt !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.caption {
+  font-size: 12pt !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.dark-primary-text {
+  opactiy: 1.0;
+}
+
+.dark-secondary-text {
+  opacity: 0.70;
+}
+
+.primary-text {
+  opacity: 0.87;
+}
+
+.secondary-text {
+  opacity: 0.54;
+}
+
+.inline-small-icon {
+   vertical-align: top;
+   font-size: 24px !important;
+}
+
+.fixed-action-btn-left {
+  position: fixed;
+  left: 23px;
+  bottom: 23px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 997;
+}
+
+icon > .ion-icon {
+  font-size: 24px !important;
+}

@@ -1,0 +1,18 @@
+.promo-example {
+    overflow: hidden;
+}
+.promo {
+    width: 100%;
+}
+
+.promo-caption {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.promo i {
+  margin: 40px 0;
+  color: rgb(105,240,173);
+  font-size: 7rem;
+  display: block;
+}

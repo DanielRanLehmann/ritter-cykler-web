@@ -1,0 +1,28 @@
+nav-wrapper {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+nav .nav-wrapper > ul > li > a {
+  color: #ffffff;
+
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+
+nav .nav-wrapper > ul > li > a:hover {
+  color: rgba(255, 255, 255, 0.65);
+  background-color: #212121 !important;
+
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+
+
+nav ul li.active a {
+  color: rgba(255, 255, 255, 0.65);
+}
