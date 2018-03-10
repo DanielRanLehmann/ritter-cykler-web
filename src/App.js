@@ -13,6 +13,8 @@ import Brands from './scenes/Brands.js';
 import WorkshopAndPrices from './scenes/WorkshopAndPrices.js';
 import Contact from './scenes/Contact.js';
 
+import ProductDetails from './scenes/ProductDetails.js';
+
 import Footer from './components/Footer.js';
 
 class App extends Component {
@@ -29,8 +31,16 @@ class App extends Component {
 
       <div className="App">
 
-        <Navbar />
-        <Contact />
+        <Navbar activeItem="kontakt2" />
+        <WorkshopAndPrices />
+
+        <ProductDetails
+          id={"-L5ck1XUopm8SLknYkiq"}
+          breadcrumbs={[
+            <a href="/" style={{"opacity": "0.70"}} className="white-text breadcrumb"><i style={{"opacity": "0.70"}} className="material-icons">home</i></a>
+          ]}
+        />
+
         <Footer />
 
         <div className="fixed-action-btn-left">

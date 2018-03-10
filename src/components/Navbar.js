@@ -70,31 +70,28 @@ class Navbar extends Component {
       }
 
       return (
-        <div>
-          <nav className="grey darken-4 z-depth-0 nav-extended">
-            <div className="nav-wrapper container">
+        <nav className="grey darken-4 z-depth-0 nav-extended">
+          <div className="nav-wrapper container">
 
-              <a className="brand-logo dark-primary-text title">RitterCykler</a>
-              <a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
+            <a className="brand-logo dark-primary-text title">RitterCykler</a>
+            <a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
 
-              <ul className="right hide-on-med-and-down">
-                <li className={activeItem === "mærker" ? "active" : null}><a>MÆRKER</a></li>
-                <li className={activeItem === "værksted og priser" ? "active" : null}><a>VÆRKSTED OG PRISER</a></li>
-                <li className={activeItem === "kontakt" ? "active" : null}><a>KONTAKT</a></li>
-                <li><a className="dropdown-trigger" data-target="dropdown1"><i className="material-icons">more_vert</i></a></li>
-              </ul>
+            <ul className="right hide-on-med-and-down">
+              <li className={activeItem === "mærker" ? "active" : null}><a>MÆRKER</a></li>
+              <li className={activeItem === "værksted og priser" ? "active" : null}><a>VÆRKSTED OG PRISER</a></li>
+              <li className={activeItem === "kontakt" ? "active" : null}><a>KONTAKT</a></li>
+              <li><a className="dropdown-trigger" data-target="dropdown1"><i className="material-icons">more_vert</i></a></li>
+            </ul>
 
-              <SideNav userView={{
-                "photoURL": "https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/223686_2270744738095_7609972_n.jpg?oh=239757edf8fc9ec2e6de0987107a9ab9&oe=5B0CBDB0",
-                "name": "Daniel Lehmann",
-                "email": "danielran11@gmail.com"
-              }}/>
+            <SideNav userView={{
+              "photoURL": "https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/223686_2270744738095_7609972_n.jpg?oh=239757edf8fc9ec2e6de0987107a9ab9&oe=5B0CBDB0",
+              "name": "Daniel Lehmann",
+              "email": "danielran11@gmail.com"
+            }}/>
 
-            </div>
+          </div>
 
-          </nav>
-
-        </div>
+        </nav>
       );
     }
 }

@@ -33,6 +33,7 @@ class BrandsGridList extends Component {
                 </div>
               )
             }
+
           </div>
         </div>
       );

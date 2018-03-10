@@ -11,6 +11,8 @@ import FAB from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/component
 import WorkshopPricesTable from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/WorkshopPricesTable.js';
 import WorkshopSurveyForm from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/WorkshopSurveyForm.js';
 
+import workshopPricesData from '../property-lists/workshop-prices.json';
+
 class WorkshopAndPrices extends Component {
 
   componentDidMount() {
@@ -32,7 +34,7 @@ class WorkshopAndPrices extends Component {
 
         <div className="white section">
           <div className="container">
-            <WorkshopPricesTable />
+            <WorkshopPricesTable rows={workshopPricesData} />
           </div>
         </div>
 
