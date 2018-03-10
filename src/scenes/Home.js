@@ -11,6 +11,9 @@ import WelcomeBlurb from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/
 import ReservationPromoTable from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/ReservationPromoTable.js';
 import NewsletterForm from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/NewsletterForm.js';
 
+import productsData from '../property-lists/test-products.json';
+import ProductGridList from '../components/ProductGridList.js';
+
 class Home extends Component {
   render() {
     return (
@@ -41,9 +44,11 @@ class Home extends Component {
 
             <h3 className="primary-text headline">Tilbud</h3>
             <div className="divider"></div>
-
+            <ProductGridList products={productsData} />
           </div>
         </div>
+
+
 
         <div className="section grey darken-4">
 

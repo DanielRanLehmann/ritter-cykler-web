@@ -1,0 +1,13 @@
+.product-cell {
+  margin-top: 24px !important;
+}
+
+.product-cell > a {
+  margin-bottom: 8px !important;
+}
+
+.solid-black-divider {
+  margin-top: 24px;
+  border-top: 1px solid;
+  border-top-color: rgba(0,0,0,1.0);
+}
