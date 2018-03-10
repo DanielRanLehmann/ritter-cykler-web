@@ -7,8 +7,15 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 import Breadcrumbs from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/Breadcrumbs.js';
 import Carousel from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/Carousel.js';
+import ProductReservationModal from '../components/ProductReservationModal.js';
 
 class ProductDetails extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.openModal = this.openModal.bind(this);
+  }
 
   componentDidMount() {
     $(document).ready(function(){
@@ -20,10 +27,15 @@ class ProductDetails extends Component {
     });
   }
 
+  openModal() {
+    console.log("open modal is called");
+    $('#product-reservation-modal').modal('open');
+  }
+
   render() {
 
     var reserveBtn = null;
-    reserveBtn = <a className="z-depth-0 green accent-3 waves-effect waves-light btn modal-trigger">Reservér</a>
+    reserveBtn = <a onClick={this.openModal} className="z-depth-0 green accent-3 waves-effect waves-light btn modal-trigger">Reservér</a>
 
 
     var breadcrumbItems = null;
@@ -52,6 +64,15 @@ class ProductDetails extends Component {
                     <a href="https://apple.com" className="waves-effect waves-white green-text text-accent-3 btn-flat"><i className="left material-icons">open_in_new</i>BESØG OFFICIEL SIDE</a>
                   </div>
                 </div>
+
+                <ProductReservationModal product={{
+                  "imageSrc": "http://localhost:3000/images/product-placeholder.png",
+                  "name": "Lorem ipsum",
+                  "normalPrice": 35999,
+                  "currencySymbol": "kr",
+                  "currencyCode": "DKK",
+                  "qty": 1
+                }}/>
 
                 <div style={{"paddingTop": "4px"}}>
                   <p className="secondary-text body-1"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring til os på 45 87 66 01</p>

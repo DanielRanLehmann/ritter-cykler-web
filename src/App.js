@@ -17,15 +17,6 @@ import ProductDetails from './scenes/ProductDetails.js';
 
 import Footer from './components/Footer.js';
 
-/*
-<ProductDetails
-  id={"-L5ck1XUopm8SLknYkiq"}
-  breadcrumbs={[
-    <a href="/" className="white-text breadcrumb"><i className="dark-secondary-text material-icons">home</i></a>
-  ]}
-/>
-*/
-
 class App extends Component {
 
   componentDidMount() {
@@ -41,7 +32,12 @@ class App extends Component {
       <div className="App">
 
         <Navbar activeItem="kontakt2" />
-        <Home />
+        <ProductDetails
+          id={"-L5ck1XUopm8SLknYkiq"}
+          breadcrumbs={[
+            <a href="/" className="white-text breadcrumb"><i className="dark-secondary-text material-icons">home</i></a>
+          ]}
+        />
 
         <Footer />
 
