@@ -4,6 +4,8 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
+import fire from '../fire.js';
+
 function GoodCheckboxesForm(props) {
   return (
     <form action="#">
@@ -156,8 +158,7 @@ class WorkshopSurveyForm extends Component {
       "comment": this.state.descriptionText,
     }
 
-    // verify surveyResponse object?
-    /*
+    // verify surveyResponse object, first?
     fire.database().ref('/surveys/' + this.state.surveyId + "/totalResponses").once('value').then((snapshot) => {
       const totalResponses = snapshot.val();
 
@@ -173,7 +174,6 @@ class WorkshopSurveyForm extends Component {
         this.setState({ isSurveyCompleted: true, successfulSurveyCompletion: false});
       });
     });
-    */
   }
 
   render() {
@@ -182,7 +182,6 @@ class WorkshopSurveyForm extends Component {
       if (this.state.successfulSurveyCompletion) {
         return (
           <div>
-            <div className="divider"></div>
             <div className="section">
               <h4 className="primary-text body-2">Tak for din feedback!</h4>
               <p className="primary-text body-1">Vi vil bruge denne information til at forbedre vores service yderligere.</p>
@@ -192,7 +191,6 @@ class WorkshopSurveyForm extends Component {
       } else {
         return (
           <div>
-            <div className="divider"></div>
             <div className="section">
               <h4 className="primary-text body-2">Ups! Der opstod en fejl</h4>
               <p className="primary-text body-1">Prøv at genindlæs siden og prøv at indsend din feedback igen.</p>

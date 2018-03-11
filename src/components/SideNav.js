@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Navbar.css';
+// import './Navbar.css';
 
 import $ from 'jquery';
 import Materialize from 'materialize-css';

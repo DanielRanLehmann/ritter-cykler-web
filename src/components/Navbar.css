@@ -3,7 +3,7 @@ nav-wrapper {
   padding-right: 0px;
 }
 
-nav .nav-wrapper > ul > li > a {
+nav .nav-wrapper > ul > .right > li > a {
   color: #ffffff;
 
   -webkit-transition: color 200ms;
@@ -12,7 +12,7 @@ nav .nav-wrapper > ul > li > a {
   transition: color 200ms;
 }
 
-nav .nav-wrapper > ul > li > a:hover {
+nav .nav-wrapper > ul > .right > li > a:hover {
   color: rgba(255, 255, 255, 0.65);
   background-color: #212121 !important;
 
@@ -23,6 +23,6 @@ nav .nav-wrapper > ul > li > a:hover {
 }
 
 
-nav ul li.active a {
+nav ul .right li.active a {
   color: rgba(255, 255, 255, 0.65);
 }

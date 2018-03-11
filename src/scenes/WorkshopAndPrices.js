@@ -43,7 +43,7 @@ class WorkshopAndPrices extends Component {
         <div className="white section">
           <div className="container">
             <div className="divider"></div>
-            <WorkshopSurveyForm />
+            <WorkshopSurveyForm surveyId={"-L63fDO7f_YjdvGHRXb8"}/>
           </div>
         </div>
 

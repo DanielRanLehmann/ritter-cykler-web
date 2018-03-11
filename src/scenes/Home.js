@@ -5,6 +5,8 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
+import fire from '../fire.js';
+
 import HeroImageView from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/HeroImageView.js';
 import BrandsBanner from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/BrandsBanner.js';
 import WelcomeBlurb from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/WelcomeBlurb.js';
@@ -14,8 +16,107 @@ import NewsletterForm from '/Users/danielranlehmann/Desktop/ritter-cykler-web/sr
 import productsData from '../property-lists/test-products.json';
 import ProductGridList from '../components/ProductGridList.js';
 
+function Preloader(props) {
+  return (
+      <div style={{height:"800px"}}>
+      <div className="preloader-wrapper active center-preloader">
+        <div className="spinner-layer spinner-blue-only">
+          <div className="circle-clipper left">
+            <div className="circle"></div>
+          </div><div className="gap-patch">
+            <div className="circle"></div>
+          </div><div className="circle-clipper right">
+            <div className="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 class Home extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      products: [],
+      productImageURLs: {},
+      isLoading: true,
+    };
+
+    this.products = [];
+    this.productImageURLs = {};
+
+    this.selectedReservationProduct = {};
+    this.reservationBtnClicked = this.reservationBtnClicked.bind(this);
+  }
+
+  componentDidMount() {
+      this.asyncFetchProducts();
+  }
+
+  asyncFetchProducts() {
+
+    const storage = fire.storage();
+
+    fire.database().ref('products').once("value", snapshot => {
+       snapshot.forEach((product) => {
+          var productData = product.val();
+          productData["id"] = product.key;
+          this.products.push(productData);
+
+          if (productData.imageNames && productData.imageNames.length > 0) {
+            var imageRef = storage.ref("product-images/" + productData.id + "/" + productData.imageNames[0]);
+            imageRef.getDownloadURL().then((url) => {
+              this.productImageURLs[productData.id] = url;
+              this.setState({productImageURLs: this.productImageURLs});
+            });
+          }
+        });
+
+        this.setState({
+          products: this.products,
+          isLoading: false
+        });
+
+    });
+  }
+
+  reservationBtnClicked(e, product) {
+    e.stopPropagation();
+
+    this.selectedReservationProduct = product;
+    this.selectedReservationProduct["firstImageURL"] = "http://localhost:3000/images/product-placeholder.png";
+    this.setState({selectedReservationProduct: this.selectedReservationProduct});
+
+    const storage = fire.storage();
+
+    if ("imageNames" in this.selectedReservationProduct && this.selectedReservationProduct.imageNames.length > 0) {
+      var imageRef = storage.ref("product-images/" + this.selectedReservationProduct.id + "/" + this.selectedReservationProduct.imageNames[0]);
+      imageRef.getDownloadURL().then((url) => {
+        this.selectedReservationProduct["firstImageURL"] = url;
+        this.setState({selectedReservationProduct: this.selectedReservationProduct});
+      });
+    }
+
+    $('#product-reservation-modal').modal('open'); // open after async setstate call?
+  }
+
   render() {
+
+    var productSection = null;
+
+    if (this.state.isLoading) {
+      productSection = <Preloader />;
+    } else {
+      productSection = <ProductGridList
+                          selectedReservationProduct={this.state.selectedReservationProduct}
+                          reservationBtnClicked={this.reservationBtnClicked}
+                          products={this.state.products}
+                          imageURLs={this.state.productImageURLs}
+                        />
+    }
+
     return (
 
       <div>
@@ -44,11 +145,9 @@ class Home extends Component {
 
             <h3 className="primary-text headline">Tilbud</h3>
             <div className="divider"></div>
-            <ProductGridList products={productsData} />
+            {productSection}
           </div>
         </div>
-
-
 
         <div className="section grey darken-4">
 

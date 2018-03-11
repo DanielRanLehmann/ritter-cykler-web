@@ -16,6 +16,14 @@ import Contact from './scenes/Contact.js';
 import ProductDetails from './scenes/ProductDetails.js';
 
 import Footer from './components/Footer.js';
+import FeedbackModal from './components/FeedbackModal.js';
+
+/*
+<ProductDetails
+  productId={"-L5ck1XUopm8SLknYkiq"}
+  breadcrumbs={[ <a href="/" className="white-text breadcrumb"><i className="dark-secondary-text material-icons">home</i></a> ]}
+/>
+*/
 
 class App extends Component {
 
@@ -31,19 +39,16 @@ class App extends Component {
 
       <div className="App">
 
-        <Navbar activeItem="kontakt2" />
-        <ProductDetails
-          id={"-L5ck1XUopm8SLknYkiq"}
-          breadcrumbs={[
-            <a href="/" className="white-text breadcrumb"><i className="dark-secondary-text material-icons">home</i></a>
-          ]}
-        />
+        <Navbar activeItem="Værksted Og Priser" />
+        <WorkshopAndPrices />
 
         <Footer />
 
         <div className="fixed-action-btn-left">
           <FeedbackButton />
         </div>
+
+        <FeedbackModal hrefLocation={"/værksted-og-priser"} />
 
       </div>
     );

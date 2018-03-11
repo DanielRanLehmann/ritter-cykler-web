@@ -5,7 +5,7 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
-import SideNav from './SideNav.js'
+import SideNav from './SideNav.js';
 
 function Dropdown(props) {
   return (

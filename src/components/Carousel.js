@@ -29,6 +29,10 @@ class Carousel extends Component {
       });
     }
 
+    componentWillUnmount() {
+      $('.carousel').carousel("destroy");
+    }
+
     render() {
       return (
         <div className="carousel carousel-slider">

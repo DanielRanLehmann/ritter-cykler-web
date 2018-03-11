@@ -5,6 +5,8 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
+import fire from '../fire.js';
+
 function ProductPreviewCell(props) {
   return (
     <div></div>
@@ -67,26 +69,20 @@ class ProductReservationModal extends Component {
       "preferredPickupDate": $('#preferred-pickup-date').val()
     }
 
-    console.log("here's the reservation payload");
-    console.log(reservationData);
+    const newReservationKey = fire.database().ref().child('reservations').push().key;
 
-    /*
-    const newOrderKey = fire.database().ref().child('orders').push().key;
 
     const updates = {};
-    updates['/orders/' + newOrderKey] = orderData;
-    updates['/product-orders/' + this.props.product.id + '/' + newOrderKey] = orderData;
+    updates['/reservations/' + newReservationKey] = reservationData;
+    updates['/product-reservations/' + this.props.product.id + '/' + newReservationKey] = reservationData;
 
     fire.database().ref().update(updates).then(() => {
-      Materialize.toast("Tak! " + this.props.product.name + " er reserveret til dig.", 30000);
+      Materialize.toast("Tak! " + this.props.product.name + " er reserveret til dig.", 4000);
 
     }).catch(function(error) {
-      var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="handleReservation; class="btn-flat toast-action">Prøv Igen</button>'));
+      var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="handleOrder; class="btn-flat toast-action">Prøv Igen</button>'));
       Materialize.toast($toastContent, 10000);
-
-    }); // return here?, maybe.. depends on who's in charge of the feedback.
-    */
-
+    });
   }
 
   componentDidMount() {
@@ -106,6 +102,38 @@ class ProductReservationModal extends Component {
   }
 
   render() {
+
+    var productPreview = null;
+    if (this.props.product) {
+      productPreview = (
+        <div style={{"padding": "24px, 24px, 24px, 24px" }} className="section">
+          <div className="col s12">
+             <div className="white">
+               <div className="row valign-wrapper">
+                 <div className="col s4 l2">
+                   <img src="" alt={this.props.product.name} className="responsive-img"/>
+                 </div>
+                   <div className="col s11">
+                     <span className="body-1 primary-text">
+                       <b>{this.props.product.name}</b><br/>
+                       {this.props.product.normalPrice} {this.props.product.currencySymbol} x {this.state.qty}
+                     </span>
+                 </div>
+                 <div className="input-field col s12 m2">
+                   <select ref={selectQTY => this.selectQTY = selectQTY} defaultValue={this.state.qty}>
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                   </select>
+                   <label>Antal</label>
+                 </div>
+               </div>
+             </div>
+           </div>
+        </div>
+      )
+    }
 
     return (
       <div id="product-reservation-modal" className="white modal modal-fixed-footer z-depth-0">
@@ -148,32 +176,7 @@ class ProductReservationModal extends Component {
 
              </form>
 
-             <div style={{"padding": "24px, 24px, 24px, 24px" }} className="section">
-               <div className="col s12">
-                  <div className="white">
-                    <div className="row valign-wrapper">
-                      <div className="col s4 l2">
-                        <img src={this.props.product.imageSrc} alt={this.props.product.name} className="responsive-img"/>
-                      </div>
-                        <div className="col s11">
-                          <span className="body-1 primary-text">
-                            <b>{this.props.product.name}</b><br/>
-                            {this.props.product.normalPrice} {this.props.product.currencySymbol} x {this.state.qty}
-                          </span>
-                      </div>
-                      <div className="input-field col s12 m2">
-                        <select ref={selectQTY => this.selectQTY = selectQTY} defaultValue={this.state.qty}>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                        </select>
-                        <label>Antal</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-             </div>
+             {productPreview}
 
             </div>
             <div className="white modal-footer">
