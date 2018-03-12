@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-// import './Navbar.css';
+import { Link } from 'react-router-dom';
+
+// import './SideNav.css';
 
 import $ from 'jquery';
 import Materialize from 'materialize-css';
@@ -46,11 +48,11 @@ class SideNav extends Component {
       return (
         <ul id="slide-out" className="side-nav">
           { userView }
-          <li><a href="#!">Mærker</a></li>
-          <li><a href="#!">Værksted Og Priser</a></li>
-          <li><a href="#!">Kontakt</a></li>
-          <li><a href="#!">Gebyr Og Returregler</a></li>
-          <li><a href="#!">Medarbejder</a></li>
+          <li><Link to={'/maerker'} activeClassName="active">Mærker</Link></li>
+          <li><Link to={'/vaerksted-og-priser'} activeClassName="active">Værksted Og Priser</Link></li>
+          <li><Link to={'/kontakt'} activeClassName="active">Kontakt</Link></li>
+          <li><a>Gebyr Og Returregler</a></li>
+          <li><a>Medarbejder</a></li>
         </ul>
       );
     }

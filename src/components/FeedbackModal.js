@@ -31,12 +31,9 @@ class FeedbackModal extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    console.log("look for location right here");
-    console.log(this.props.location);
-
-    var hrefLocation = null;
-    if (this.props.hrefLocation) {
-      hrefLocation = this.props.hrefLocation;
+    var locationPath = null;
+    if (this.props.locationPath) {
+      locationPath = this.props.locationPath;
     }
 
     const feedbackData = {
@@ -44,7 +41,7 @@ class FeedbackModal extends Component {
       "languageCode": "da",
       "anonymousFeedback": true,
       "comment": this.state.comment,
-      "hrefLocation": hrefLocation,
+      "locationPath": locationPath,
     }
 
     const newFeedbackKey = fire.database().ref().child('feedback').push().key;

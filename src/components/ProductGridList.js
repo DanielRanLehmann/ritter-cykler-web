@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './ProductGridList.css';
 
 import $ from 'jquery';
@@ -9,7 +10,7 @@ import ProductReservationModal from './ProductReservationModal.js';
 
 function Cell(props) {
   return (
-    <div className="product-cell center-align hoverable">
+    <div onClick={ (e) => props.handleProductDetailClick(e, props.product) } style={{"cursor": "pointer"}} className="product-cell center-align hoverable">
       <img className="product-cell-image" width="100%" src={props.imageSrc}/>
       <h5 className="primary-text title">{props.name}</h5>
       <p className="primary-text body-1">{props.normalPrice} {props.currencySymbol}</p>
@@ -48,6 +49,7 @@ class ProductGridList extends Component {
 
                   <Cell
                     product={product}
+                    handleProductDetailClick = {this.props.handleProductDetailClick}
                     reservationBtnClicked = {this.props.reservationBtnClicked}
                     openModal={this.openModal}
                     imageSrc={this.matchingImageURL(product.id)}

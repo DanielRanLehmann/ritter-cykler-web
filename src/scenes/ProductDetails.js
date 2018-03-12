@@ -92,9 +92,10 @@ class ProductDetails extends Component {
   }
 
   componentDidMount() {
-    if (this.props.productId) {
-        this.asyncFetchProductDetails(this.props.productId);
-    } // else a 404 error has occured.
+    const productId = this.props.match.params.productId;
+    if (productId) {
+        this.asyncFetchProductDetails(productId);
+    } // else a 404 error has occured. push to 404 scene or detail that the product was not found.
   }
 
   render() {
@@ -126,18 +127,19 @@ class ProductDetails extends Component {
       reserveBtn = <a className="disabled z-depth-0 green accent-3 waves-effect waves-light btn modal-trigger">Udsolgt</a>
     }
 
+    /*
     var breadcrumbItems = null;
     if (this.props.breadcrumbs) {
-      breadcrumbItems = this.props.breadcrumbs;
-      breadcrumbItems.push(<a href="#!" className="white-text breadcrumb">{this.state.productData.name}</a>);
+      // breadcrumbItems = this.props.breadcrumbs;
+      // breadcrumbItems.push(<a href="#!" className="white-text breadcrumb">{this.state.productData.name}</a>);
 
     }
 
+    <Breadcrumbs items={breadcrumbItems}/>
+    */
+
     return (
         <div>
-
-          <Breadcrumbs items={breadcrumbItems}/>
-
           <div className="section white">
             <div className="container">
               <div className="row">

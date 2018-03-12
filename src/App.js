@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 
 import $ from 'jquery';
@@ -18,6 +19,7 @@ import ProductDetails from './scenes/ProductDetails.js';
 import Footer from './components/Footer.js';
 import FeedbackModal from './components/FeedbackModal.js';
 
+import Main from './Main.js'
 /*
 <ProductDetails
   productId={"-L5ck1XUopm8SLknYkiq"}
@@ -40,15 +42,14 @@ class App extends Component {
       <div className="App">
 
         <Navbar activeItem="Værksted Og Priser" />
-        <WorkshopAndPrices />
-
+        <Main />
         <Footer />
 
         <div className="fixed-action-btn-left">
           <FeedbackButton />
         </div>
 
-        <FeedbackModal hrefLocation={"/værksted-og-priser"} />
+        <FeedbackModal locationPath={window.location.pathname} />
 
       </div>
     );

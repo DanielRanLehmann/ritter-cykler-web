@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 // import './Home.css';
 
 import $ from 'jquery';
@@ -49,6 +50,7 @@ class Home extends Component {
 
     this.selectedReservationProduct = {};
     this.reservationBtnClicked = this.reservationBtnClicked.bind(this);
+    this.handleProductDetailClick = this.handleProductDetailClick.bind(this);
   }
 
   componentDidMount() {
@@ -82,6 +84,11 @@ class Home extends Component {
     });
   }
 
+  handleProductDetailClick(e, product) {
+    e.preventDefault();
+    this.props.history.push(`/produkt/${product.id}`);
+  }
+
   reservationBtnClicked(e, product) {
     e.stopPropagation();
 
@@ -111,6 +118,7 @@ class Home extends Component {
     } else {
       productSection = <ProductGridList
                           selectedReservationProduct={this.state.selectedReservationProduct}
+                          handleProductDetailClick={this.handleProductDetailClick}
                           reservationBtnClicked={this.reservationBtnClicked}
                           products={this.state.products}
                           imageURLs={this.state.productImageURLs}
@@ -142,7 +150,6 @@ class Home extends Component {
 
         <div className="section white">
           <div className="row container">
-
             <h3 className="primary-text headline">Tilbud</h3>
             <div className="divider"></div>
             {productSection}

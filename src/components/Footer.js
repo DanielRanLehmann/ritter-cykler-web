@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 // import './Footer.css';
 
 import $ from 'jquery';
@@ -33,9 +35,9 @@ class Footer extends Component {
                 <div className="col l4 offset-l2 s12">
                   <h5 className="black-text primary-text body-2">Links</h5>
                   <ul>
-                    <li><a className="body-1 green-text text-accent-3" href="#!">Mærker</a></li>
-                    <li><a className="body-1 green-text text-accent-3" href="#!">Værksted og priser</a></li>
-                    <li><a className="body-1 green-text text-accent-3" href="#!">Kontakt</a></li>
+                    <li><Link to={'/maerker'} className="body-1 green-text text-accent-3" activeClassName="active">Mærker</Link></li>
+                    <li><Link to={'/vaerksted-og-priser'} className="body-1 green-text text-accent-3" activeClassName="active">Værksted Og Priser</Link></li>
+                    <li><Link to={'/kontakt'} className="body-1 green-text text-accent-3" activeClassName="active">Kontakt</Link></li>
                     <li><a className="body-1 green-text text-accent-3" href="#!">Retur og Gebyrregler</a></li>
                   </ul>
                 </div>

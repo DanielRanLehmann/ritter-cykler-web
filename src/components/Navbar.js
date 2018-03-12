@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Navbar.css';
 
 import $ from 'jquery';
@@ -73,13 +75,13 @@ class Navbar extends Component {
         <nav className="grey darken-4 z-depth-0 nav-extended">
           <div className="nav-wrapper container">
 
-            <a className="brand-logo dark-primary-text title">RitterCykler</a>
+            <Link to={'/'} className="brand-logo dark-primary-text title" activeClassName="active">RitterCykler</Link>
             <a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
 
             <ul className="right hide-on-med-and-down">
-              <li className={activeItem === "mærker" ? "active" : null}><a>MÆRKER</a></li>
-              <li className={activeItem === "værksted og priser" ? "active" : null}><a>VÆRKSTED OG PRISER</a></li>
-              <li className={activeItem === "kontakt" ? "active" : null}><a>KONTAKT</a></li>
+              <li className="active"><Link to={'/maerker'} activeClassName="active">MÆRKER</Link></li>
+              <li className={activeItem === "værksted og priser" ? "active" : null}><Link to={'/vaerksted-og-priser'} activeClassName="active">VÆRKSTED OG PRISER</Link></li>
+              <li className={activeItem === "kontakt" ? "active" : null}><Link to={'/kontakt'} activeClassName="active">KONTAKT</Link></li>
               <li><a className="dropdown-trigger" data-target="dropdown1"><i className="material-icons">more_vert</i></a></li>
             </ul>
 
