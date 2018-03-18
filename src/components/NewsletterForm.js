@@ -76,9 +76,7 @@ class NewsletterForm extends Component {
       updates['/newsletter-subscribers/' + newSubscriberKey] = subscriberData;
 
       fire.database().ref().update(updates).then(() => {
-
         this.setState({successfulFormCompletion: true})
-        console.log("newsletter-sub was added.")
 
       }).catch(function(error) {
         var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="this.handleSubmit; class="btn-flat toast-action">Prøv Igen</button>'));

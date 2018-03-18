@@ -60,8 +60,6 @@ class Contact extends Component {
             </div>
 
             <div className="col s12 m6">
-              <h6 className="primary-text title">Send os en besked</h6>
-              <p className="secondary-text body-1">Du kan forvente en svartid på 1-2 arbejdsdage.</p>
               <ContactForm />
             </div>
 
