@@ -5,14 +5,14 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
-import HeaderView from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/HeaderView.js';
-import FAB from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/FloatingActionButton.js';
+import HeaderView from '../components/HeaderView.js';
+import FAB from '../components/FloatingActionButton.js';
 
-import GoogleMap from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/GoogleMap.js';
-import ContactForm from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/ContactForm.js';
+import GoogleMap from '../components/GoogleMap.js';
+import ContactForm from '../components/ContactForm.js';
 
-import StoreDirectionsView from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/StoreDirectionsView.js';
-import ReviewCard from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/StoreReviewCard.js';
+import StoreDirectionsView from '../components/StoreDirectionsView.js';
+import ReviewCard from '../components/StoreReviewCard.js';
 
 class Contact extends Component {
 

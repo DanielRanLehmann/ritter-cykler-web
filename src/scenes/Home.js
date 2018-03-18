@@ -8,11 +8,11 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 import fire from '../fire.js';
 
-import HeroImageView from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/HeroImageView.js';
-import BrandsBanner from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/BrandsBanner.js';
-import WelcomeBlurb from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/WelcomeBlurb.js';
-import ReservationPromoTable from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/ReservationPromoTable.js';
-import NewsletterForm from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/NewsletterForm.js';
+import HeroImageView from '../components/HeroImageView.js';
+import BrandsBanner from '../components/BrandsBanner.js';
+import WelcomeBlurb from '../components/WelcomeBlurb.js';
+import ReservationPromoTable from '../components/ReservationPromoTable.js';
+import NewsletterForm from '../components/NewsletterForm.js';
 
 import productsData from '../property-lists/test-products.json';
 import ProductGridList from '../components/ProductGridList.js';

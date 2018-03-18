@@ -5,8 +5,8 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
-import Breadcrumbs from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/Breadcrumbs.js';
-import Carousel from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/Carousel.js';
+import Breadcrumbs from '../components/Breadcrumbs.js';
+import Carousel from '../components/Carousel.js';
 import ProductReservationModal from '../components/ProductReservationModal.js';
 
 import fire from '../fire.js';
