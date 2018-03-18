@@ -144,9 +144,11 @@ class ContactForm extends Component {
                 <textarea value={this.state.message} onChange={this.handleMessageChange} id="message-field" className="materialize-textarea"></textarea>
                 <label htmlFor="message-field">Besked</label>
               </div>
+              { sendBtn }
             </div>
 
-            { sendBtn }
+
+
           </form>
         </div>
       );
