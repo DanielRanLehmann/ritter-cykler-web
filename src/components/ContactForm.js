@@ -146,9 +146,6 @@ class ContactForm extends Component {
               </div>
               { sendBtn }
             </div>
-
-
-
           </form>
         </div>
       );

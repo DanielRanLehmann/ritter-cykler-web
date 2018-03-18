@@ -7,10 +7,13 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 function Tile(props) {
   return (
-    <div className="center-align tile hoverable">
-      <img width="100%" src={props.imageSrc}/>
-      <h5 className="primary-text title">{props.title}</h5>
-      <a href={props.href} className="waves-effect btn-flat green-text text-accent-3"><i className="left material-icons">open_in_new</i>Besøg Siden</a>
+    <div>
+      <div className="center-align tile hoverable">
+        <img width="100%" src={props.imageSrc}/>
+        <h5 className="primary-text title">{props.title}</h5>
+        <a target="_blank" href={props.href} className="waves-effect btn-flat green-text text-accent-3"><i className="left material-icons">open_in_new</i>Besøg Siden</a>
+      </div>
+      <div className="divider"></div>
     </div>
   )
 }

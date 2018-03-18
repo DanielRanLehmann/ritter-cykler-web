@@ -28,7 +28,7 @@ class Brands extends Component {
           subtitle={ "Vi fører følgende mærker i butikken"}
         />
 
-        <div className="section white">
+        <div className="white">
           <div className="container">
             <BrandsGridList tiles={brandsData}/>
           </div>

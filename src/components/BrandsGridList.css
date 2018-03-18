@@ -1,6 +1,7 @@
 .tile {
-  border-top: 1px solid;
-  border-top-color: rgba(0,0,0,1.0);
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(224,224,224,0.0);
+  margin-top: 24px;
   margin-bottom: 24px;
 }
 
