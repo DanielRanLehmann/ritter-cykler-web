@@ -116,7 +116,7 @@ class FeedbackModal extends Component {
       Materialize.toast("Tak for din feedback!", 4000);
 
     }).catch(function(error) {
-      var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="this.handleReservation; class="btn-flat toast-action">Prøv Igen</button>'));
+      var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="this.handleSubmit; class="btn-flat toast-action">Prøv Igen</button>'));
       Materialize.toast($toastContent, 10000);
     });
   }
