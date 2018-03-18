@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './FeedbackModal.css';
+import './FeedbackModal.css';
 
 import $ from 'jquery';
 import Materialize from 'materialize-css';
@@ -17,15 +17,77 @@ class FeedbackModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: null
+      description: null
     };
 
-    this.handleCommentChange = this.handleCommentChange.bind(this);
+    this.handledescriptionChange = this.handledescriptionChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleCommentChange = (e) => {
-    this.setState({comment: e.target.value});
+  // smart cookies built this logic:
+  // https://stackoverflow.com/questions/9514179/how-to-find-the-operating-system-version-using-javascript
+  detectedOSName() {
+    var OSName = "Unknown";
+    if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) OSName="Windows 10";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName="Windows 8";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName="Windows 7";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName="Windows Vista";
+    if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName="Windows XP";
+    if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSName="Windows 2000";
+    if (window.navigator.userAgent.indexOf("Mac")            != -1) OSName="Mac/iOS";
+    if (window.navigator.userAgent.indexOf("X11")            != -1) OSName="UNIX";
+    if (window.navigator.userAgent.indexOf("Linux")          != -1) OSName="Linux";
+
+    return OSName;
+  }
+
+  // smart cookies built this logic:
+  // https://stackoverflow.com/questions/14573881/why-does-javascript-navigator-appname-return-netscape-for-safari-firefox-and-ch
+
+  detectedBrowser() {
+    var name = navigator.userAgent;
+
+    // the order of the conditions matter.
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 )
+    {
+        name = "Opera";
+    }
+    else if(navigator.userAgent.indexOf("Chrome") != -1 )
+    {
+        name = "Chrome";
+    }
+    else if(navigator.userAgent.indexOf("Safari") != -1)
+    {
+        name = "Safari";
+    }
+    else if(navigator.userAgent.indexOf("Firefox") != -1 )
+    {
+         name = "Firefox";
+    }
+    else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+    {
+        name = "IE";
+    }
+    else
+    {
+       name = "Unknown";
+    }
+
+    // Blink engine detection
+    // https://en.wikipedia.org/wiki/Blink_(web_engine)
+    // var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+    return {
+      "languageCode": navigator.language,
+      "name": name,
+      "userAgent": navigator.userAgent,
+      "cookiesEnabled": navigator.cookieEnabled,
+      "osName": this.detectedOSName()
+    }
+  }
+
+  handledescriptionChange = (e) => {
+    this.setState({description: e.target.value});
   }
 
   handleSubmit(e) {
@@ -37,11 +99,12 @@ class FeedbackModal extends Component {
     }
 
     const feedbackData = {
+      "browser": this.detectedBrowser(),
       "createdAt": new Date().getTime(),
       "languageCode": "da",
       "anonymousFeedback": true,
-      "comment": this.state.comment,
-      "locationPath": locationPath,
+      "description": this.state.description,
+      "locationPath": locationPath
     }
 
     const newFeedbackKey = fire.database().ref().child('feedback').push().key;
@@ -69,26 +132,36 @@ class FeedbackModal extends Component {
 
   render() {
 
+    var sendBtn = null;
+    if (this.state.description && this.state.description.length > 0) {
+      sendBtn = <a onClick={this.handleSubmit} className="modal-action modal-close waves-effect green-text text-accent-3 btn-flat">Send</a>
+    } else {
+      sendBtn = <a onClick={this.handleSubmit} className="disabled modal-action modal-close waves-effect green-text text-accent-3 btn-flat">Send</a>
+    }
+
     return (
       <div id="feedback-modal" className="white modal modal-fixed-footer z-depth-0">
+              <div className="section grey darken-4 valign-wrapper">
+                <div className="container">
+                  <h4 className="left-align white-text dark-primary-text title">Send Feedback</h4>
+                </div>
+              </div>
+
             <div className="modal-content">
-              <h4 className="primary-text headline">Feedback</h4>
-              <p className="secondary-text body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
               <form className="col s12">
                <div className="row">
                  <div className="input-field col s12">
-                    <textarea value={this.state.comment} onChange={this.handleCommentChange} id="commentArea" className="materialize-textarea"></textarea>
-                    <label htmlFor="commentArea">Beskriv dit problem eller del din idé</label>
+                    <textarea value={this.state.description} onChange={this.handledescriptionChange} id="descriptionArea" className="materialize-textarea"></textarea>
+                    <label htmlFor="descriptionArea">Beskriv dit problem eller del din idé</label>
                  </div>
                </div>
-
              </form>
 
             </div>
             <div className="white modal-footer">
               <a  className="modal-action modal-close waves-effect green-text text-accent-3 btn-flat">Annuller</a>
-              <a onClick={this.handleSubmit} className="modal-action modal-close waves-effect green-text text-accent-3 btn-flat">Send</a>
+              { sendBtn }
             </div>
           </div>
     );
