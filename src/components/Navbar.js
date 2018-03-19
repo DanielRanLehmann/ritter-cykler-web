@@ -15,8 +15,8 @@ function MoreDropdown(props) {
       <li>
         <NavLink
           className={"black-text"}
-          to="/gebyr-og-returregler"
-          activeClassName="active">Gebyr og Returregler
+          to="/reklamation-og-returregler"
+          activeClassName="active">Reklamation og Returregler
         </NavLink>
       </li>
     </ul>

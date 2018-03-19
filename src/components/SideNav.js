@@ -74,9 +74,9 @@ class SideNav extends Component {
 
           <li>
             <NavLink
-              to="/gebyr-og-returregler"
+              to="/reklamation-og-returregler"
               activeStyle={{ color:"white", "background-color": '#00e676'}}
-              activeClassName="active">Gebyr og Returregler
+              activeClassName="active">Reklamation og Returregler
             </NavLink>
           </li>
         </ul>
