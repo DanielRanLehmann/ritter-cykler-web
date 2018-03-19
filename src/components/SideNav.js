@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 // import './SideNav.css';
 
@@ -48,11 +48,37 @@ class SideNav extends Component {
       return (
         <ul id="slide-out" className="side-nav">
           { userView }
-          <li><Link to={'/maerker'} activeClassName="active">Mærker</Link></li>
-          <li><Link to={'/vaerksted-og-priser'} activeClassName="active">Værksted Og Priser</Link></li>
-          <li><Link to={'/kontakt'} activeClassName="active">Kontakt</Link></li>
-          <li><a>Gebyr Og Returregler</a></li>
-          <li><a>Medarbejder</a></li>
+          <li>
+            <NavLink
+              to="/maerker"
+              activeStyle={{ color:"white", "background-color": '#00e676'}}
+              activeClassName="active">Mærker
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/vaerksted-og-priser"
+              activeStyle={{ color:"white", "background-color": '#00e676'}}
+              activeClassName="active">Værksted og Priser
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/kontakt"
+              activeStyle={{ color:"white", "background-color": '#00e676'}}
+              activeClassName="active">Kontakt
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/gebyr-og-returregler"
+              activeStyle={{ color:"white", "background-color": '#00e676'}}
+              activeClassName="active">Gebyr og Returregler
+            </NavLink>
+          </li>
         </ul>
       );
     }

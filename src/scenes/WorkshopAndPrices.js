@@ -29,7 +29,6 @@ class WorkshopAndPrices extends Component {
         <HeaderView
           title={ "Værksted Og Priser" }
           subtitle={ "Vores værksteds politik er at alt hvad vi kan reparer, laves til næste hverdag kl.17. Cykler kan indleveres i hele åbningstiden. Når cyklen er færdig, bliver der sendt en sms til kunden. Cyklen skal afhentes senest 30 min før lukketid."}
-          halfwayFAB={ <FAB positionHalfway={true} materialIconName={"question_answer"}/> }
         />
 
         <div className="white section">

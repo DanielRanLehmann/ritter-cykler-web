@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import Radium from "radium";
 
 import './Navbar.css';
 
@@ -9,13 +10,16 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 import SideNav from './SideNav.js';
 
-function Dropdown(props) {
+function MoreDropdown(props) {
   return (
-    <ul id="dropdown1" className="dropdown-content">
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li className="divider"></li>
-      <li><a href="#!">three</a></li>
+    <ul id='dropdown1' className='dropdown-content'>
+      <li>
+        <NavLink
+          className={"black-text"}
+          to="/gebyr-og-returregler"
+          activeClassName="active">Gebyr og Returregler
+        </NavLink>
+      </li>
     </ul>
   );
 }
@@ -61,10 +65,23 @@ class Navbar extends Component {
     componentDidMount() {
       $( document ).ready(function(){
         $(".button-collapse").sideNav();
+        $('.dropdown-button').dropdown({
+            inDuration: 300,
+            outDuration: 225,
+            constrainWidth: false, // Does not change width of dropdown to that of the activator
+            hover: false, // Activate on hover
+            gutter: 0, // Spacing from edge
+            belowOrigin: true, // Displays dropdown below the button
+            alignment: 'left', // Displays dropdown with edge aligned to the left of button
+            stopPropagation: false // Stops event propagation
+          }
+        );
       });
 
     }
     render() {
+
+      const RadiatingNavLink = Radium(NavLink);
 
       var activeItem = null;
       if (this.props.activeItem) {
@@ -75,21 +92,46 @@ class Navbar extends Component {
         <nav className="grey darken-4 z-depth-0 nav-extended">
           <div className="nav-wrapper container">
 
-            <Link to={'/'} className="brand-logo dark-primary-text title" activeClassName="active">RitterCykler</Link>
+            <NavLink to={'/'} className="brand-logo dark-primary-text title" activeClassName="active">RitterCykler</NavLink>
             <a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
 
-            <ul className="right hide-on-med-and-down">
-              <li className="active"><Link to={'/maerker'} activeClassName="active">MÆRKER</Link></li>
-              <li className={activeItem === "værksted og priser" ? "active" : null}><Link to={'/vaerksted-og-priser'} activeClassName="active">VÆRKSTED OG PRISER</Link></li>
-              <li className={activeItem === "kontakt" ? "active" : null}><Link to={'/kontakt'} activeClassName="active">KONTAKT</Link></li>
-              <li><a className="dropdown-trigger" data-target="dropdown1"><i className="material-icons">more_vert</i></a></li>
+            <ul className="nav-items right hide-on-med-and-down">
+              <li>
+                <RadiatingNavLink
+                  style={{ ":hover": { background: "green" } }}
+                  key="brands"
+                  to="/maerker"
+                  activeStyle={{ opacity: 0.65, color: 'white'}}
+                  activeClassName="active">MÆRKER
+                </RadiatingNavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  key="workshop"
+                  to="/vaerksted-og-priser"
+                  activeStyle={{ opacity: 0.65, color: 'white'}}
+                  activeClassName="active">VÆRKSTED OG PRISER
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  key="contact"
+                  className="nav_link"
+                  to="/kontakt"
+                  activeStyle={{ opacity: 0.65, color: 'white'}}
+                  activeClassName="active">KONTAKT
+                </NavLink>
+              </li>
+
+              <li><a className="dropdown-button tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mere" data-activates='dropdown1'><i className="material-icons">more_vert</i></a></li>
+
             </ul>
 
-            <SideNav userView={{
-              "photoURL": "https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/223686_2270744738095_7609972_n.jpg?oh=239757edf8fc9ec2e6de0987107a9ab9&oe=5B0CBDB0",
-              "name": "Daniel Lehmann",
-              "email": "danielran11@gmail.com"
-            }}/>
+            <MoreDropdown />
+
+            <SideNav/>
 
           </div>
 
@@ -98,4 +140,5 @@ class Navbar extends Component {
     }
 }
 
+Navbar = Radium(Navbar);
 export default Navbar;

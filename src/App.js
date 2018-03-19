@@ -37,6 +37,9 @@ class App extends Component {
   }
 
   render() {
+
+    console.log(window.location.pathname);
+    
     return (
 
       <div className="App">

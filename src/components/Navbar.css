@@ -1,10 +1,5 @@
-nav-wrapper {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-nav .nav-wrapper > ul > .right > li > a {
-  color: #ffffff;
+nav .nav-items a:not(.activeLink) {
+  color: rgba(255, 255, 255, 1.0);
 
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
@@ -12,17 +7,11 @@ nav .nav-wrapper > ul > .right > li > a {
   transition: color 200ms;
 }
 
-nav .nav-wrapper > ul > .right > li > a:hover {
+nav .nav-items a:not(.activeLink):hover {
   color: rgba(255, 255, 255, 0.65);
-  background-color: #212121 !important;
 
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;
   transition: color 200ms;
-}
-
-
-nav ul .right li.active a {
-  color: rgba(255, 255, 255, 0.65);
 }

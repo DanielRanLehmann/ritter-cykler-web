@@ -28,10 +28,7 @@ class Contact extends Component {
 
       <div>
 
-        <HeaderView
-          title={ "Kontakt" }
-          halfwayFAB={ <FAB positionHalfway={true} materialIconName={"directions"}/> }
-        />
+        <HeaderView title={ "Kontakt" } />
 
         <div className="section white">
           <div className="row container">
