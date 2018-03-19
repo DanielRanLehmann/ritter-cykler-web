@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Radium from "radium";
 
 import './Navbar.css';
 
@@ -81,8 +80,6 @@ class Navbar extends Component {
     }
     render() {
 
-      const RadiatingNavLink = Radium(NavLink);
-
       var activeItem = null;
       if (this.props.activeItem) {
         activeItem = this.props.activeItem.toLowerCase();
@@ -97,13 +94,12 @@ class Navbar extends Component {
 
             <ul className="nav-items right hide-on-med-and-down">
               <li>
-                <RadiatingNavLink
-                  style={{ ":hover": { background: "green" } }}
+                <NavLink
                   key="brands"
                   to="/maerker"
                   activeStyle={{ opacity: 0.65, color: 'white'}}
                   activeClassName="active">MÆRKER
-                </RadiatingNavLink>
+                </NavLink>
               </li>
 
               <li>
@@ -140,5 +136,4 @@ class Navbar extends Component {
     }
 }
 
-Navbar = Radium(Navbar);
 export default Navbar;
