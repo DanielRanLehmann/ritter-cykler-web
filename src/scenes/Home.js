@@ -130,11 +130,10 @@ class Home extends Component {
       <div>
         <HeroImageView imageSrc={"http://localhost:3000/images/hero-golden-gate.jpeg"} height={500} />
 
-        <div className="section white">
-          <div className="row container">
+        <div className="section grey lighten-5">
+          <div className="container">
             <FeaturedBrands />
           </div>
-          <div className="container divider"></div>
         </div>
 
         <div className="section white">
