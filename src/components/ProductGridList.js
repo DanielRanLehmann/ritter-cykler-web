@@ -45,7 +45,7 @@ class ProductGridList extends Component {
           <div className="row">
             {
               this.props.products.map((product) =>
-                <div className="col s12 m6 l4">
+                <div className="col s12 m6 l4 xl3">
 
                   <Cell
                     product={product}

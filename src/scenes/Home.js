@@ -9,7 +9,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import fire from '../fire.js';
 
 import HeroImageView from '../components/HeroImageView.js';
-import BrandsBanner from '../components/BrandsBanner.js';
+import FeaturedBrands from '../components/FeaturedBrands.js';
 import WelcomeBlurb from '../components/WelcomeBlurb.js';
 import ReservationPromoTable from '../components/ReservationPromoTable.js';
 import NewsletterForm from '../components/NewsletterForm.js';
@@ -130,10 +130,11 @@ class Home extends Component {
       <div>
         <HeroImageView imageSrc={"http://localhost:3000/images/hero-golden-gate.jpeg"} height={500} />
 
-        <div className="section grey lighten-5">
+        <div className="section white">
           <div className="row container">
-            <BrandsBanner />
+            <FeaturedBrands />
           </div>
+          <div className="container divider"></div>
         </div>
 
         <div className="section white">

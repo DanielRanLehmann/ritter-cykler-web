@@ -1,106 +1,106 @@
 [
   {
-    "imageSrc": "http://localhost:3000/images/brands/colnago-logo.png",
+    "imageName": "colnago-logo.png",
     "title": "Colnago",
     "href": "http://www.colnago.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/pinarello-logo.png",
+    "imageName": "pinarello-logo.png",
     "title": "Pinarello",
     "href": "http://www.pinarello.com/it"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/principia-logo.png",
+    "imageName": "principia-logo.png",
     "title": "Principia",
     "href": "https://principia.dk/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/trek-logo.png",
+    "imageName": "trek-logo.png",
     "title": "Trek",
     "href": "https://www.trekbikes.com/dk/da_DK/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/fondriest-logo.png",
+    "imageName": "fondriest-logo.png",
     "title": "Fondriest",
     "href": "http://www.fondriestbici.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/giro-logo.png",
+    "imageName": "giro-logo.png",
     "title": "Giro",
     "href": "http://www.giro.com/eu_en/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/mbk-logo.png",
+    "imageName": "mbk-logo.png",
     "title": "MBK",
     "href": "https://mbk-cykler.dk/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/cube-logo.png",
+    "imageName": "cube-logo.png",
     "title": "Cube",
     "href": "https://www.cube.eu/cube-bikes/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/limar-logo.png",
+    "imageName": "limar-logo.png",
     "title": "Limar",
     "href": "http://www.limar.com/site/index.php?lng=eng"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/reynolds-logo.png",
+    "imageName": "reynolds-logo.png",
     "title": "Reynolds",
     "href": "https://reynoldscycling.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/nutcase-logo.png",
+    "imageName": "nutcase-logo.png",
     "title": "Nutcase",
     "href": "http://dk.nutcasehelmets.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/bell-logo.png",
+    "imageName": "bell-logo.png",
     "title": "Bell",
     "href": "https://www.bellhelmets.com/en_eu/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/ritterplus-logo.png",
+    "imageName": "ritterplus-logo.png",
     "title": "Ritter Plus",
     "href": "http://www.ritterplus.dk/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/mavic-logo.png",
+    "imageName": "mavic-logo.png",
     "title": "Mavic",
     "href": "https://www.mavic.com/en-int?noredirect=1"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/sidi-logo.png",
+    "imageName": "sidi-logo.png",
     "title": "Sidi",
     "href": "http://www.sidi.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/nalini-logo.png",
+    "imageName": "nalini-logo.png",
     "title": "Nalini",
     "href": "https://www.nalini.com/it/ss18/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/spinergy-logo.png",
+    "imageName": "spinergy-logo.png",
     "title": "Spinergy",
     "href": "https://www.spinergy.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/zipp-logo.png",
+    "imageName": "zipp-logo.png",
     "title": "Zipp",
     "href": "http://www.zipp.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/oakley-logo.png",
+    "imageName": "oakley-logo.png",
     "title": "Oakley",
     "href": "http://www.oakley.com/"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/garmin-logo.png",
+    "imageName": "garmin-logo.png",
     "title": "Garmin",
     "href": "http://www.garmin.com/da-DK"
   },
   {
-    "imageSrc": "http://localhost:3000/images/brands/bontrager-logo.png",
+    "imageName": "bontrager-logo.png",
     "title": "Bontrager",
     "href": "https://www.trekbikes.com/us/en_US/bontrager/"
   }

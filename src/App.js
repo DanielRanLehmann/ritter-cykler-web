@@ -45,7 +45,7 @@ class App extends Component {
         <Main />
         <Footer />
 
-        <div className="fixed-action-btn-left">
+        <div className="hide-on-med-and-down fixed-action-btn-left">
           <FeedbackButton />
         </div>
 

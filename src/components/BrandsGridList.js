@@ -9,7 +9,7 @@ function Tile(props) {
   return (
     <div>
       <div className="center-align tile hoverable">
-        <img width="100%" src={props.imageSrc}/>
+        <img width="100%" src={props.image}/>
         <h5 className="primary-text title">{props.title}</h5>
         <a target="_blank" href={props.href} className="waves-effect btn-flat green-text text-accent-3"><i className="left material-icons">open_in_new</i>Besøg Siden</a>
       </div>
@@ -31,12 +31,11 @@ class BrandsGridList extends Component {
           <div className="row">
             {
               this.props.tiles.map((tile) =>
-                <div className="col s12 m6 l3">
-                  <Tile imageSrc={tile.imageSrc} title={tile.title} href={tile.href}/>
+                <div className="col s12 m6 l4 xl3">
+                  <Tile image={require('../assets/brands/color/' + tile.imageName)} title={tile.title} href={tile.href}/>
                 </div>
               )
             }
-
           </div>
         </div>
       );
