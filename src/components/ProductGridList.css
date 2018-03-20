@@ -1,9 +1,10 @@
 .product-cell {
-  margin-top: 24px !important;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .product-cell > a {
-  margin-bottom: 8px !important;
+  margin-bottom: 16px !important;
 }
 
 .solid-black-divider {

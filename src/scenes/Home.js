@@ -7,6 +7,7 @@ import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
 import fire from '../fire.js';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import HeroImageView from '../components/HeroImageView.js';
 import FeaturedBrands from '../components/FeaturedBrands.js';
@@ -16,6 +17,8 @@ import NewsletterForm from '../components/NewsletterForm.js';
 
 import productsData from '../property-lists/test-products.json';
 import ProductGridList from '../components/ProductGridList.js';
+
+import * as api from '../api/api.js';
 
 function Preloader(props) {
   return (
@@ -41,8 +44,11 @@ class Home extends Component {
     super();
     this.state = {
       products: [],
+      lastProductId: null,
       productImageURLs: {},
       isLoading: true,
+      isLoadingLatestBatch:false,
+      didReachBottom: false
     };
 
     this.products = [];
@@ -51,36 +57,45 @@ class Home extends Component {
     this.selectedReservationProduct = {};
     this.reservationBtnClicked = this.reservationBtnClicked.bind(this);
     this.handleProductDetailClick = this.handleProductDetailClick.bind(this);
+    this.asyncFetchProducts = this.asyncFetchProducts.bind(this);
   }
 
   componentDidMount() {
-      this.asyncFetchProducts();
+      // this.asyncFetchProducts();
   }
 
   asyncFetchProducts() {
+    if ((this.state.isLoadingLatestBatch && !this.state.isLoading) || this.state.didReachBottom) { // did not fetch last batch [yet] and has finished initial loading.
+      return;
+    }
 
-    const storage = fire.storage();
+    this.setState({isLoadingLatestBatch: true})
 
-    fire.database().ref('products').once("value", snapshot => {
-       snapshot.forEach((product) => {
-          var productData = product.val();
-          productData["id"] = product.key;
-          this.products.push(productData);
+    api.asyncFetchProducts(this.state.lastProductId, products => {
+      console.log(this.state.lastProductId);
+      console.log(products);
 
-          if (productData.imageNames && productData.imageNames.length > 0) {
-            var imageRef = storage.ref("product-images/" + productData.id + "/" + productData.imageNames[0]);
-            imageRef.getDownloadURL().then((url) => {
-              this.productImageURLs[productData.id] = url;
-              this.setState({productImageURLs: this.productImageURLs});
-            });
-          }
-        });
+      this.products = this.products.concat(products);
+      this.setState({
+        products: this.products,
+        lastProductId: this.products[(this.products.length - 1)].id,
+        isLoading: false,
+        isLoadingLatestBatch: false,
+        didReachBottom: (products.length === 0) // or check the shallow-keys.length()?
+      });
 
-        this.setState({
-          products: this.products,
-          isLoading: false
-        });
+      products.forEach((product) => {
+        if (product.imageNames) {
+          api.asyncFetchProductImage(product.id, product.imageNames[0], imageURL => {
+            this.productImageURLs[product.id] = imageURL;
+            this.setState({productImageURLs: this.productImageURLs});
+          });
+        }
+      });
 
+    }).catch( (error) => {
+      Materialize.toast('Ups! Noget gik galt. Prøv at genindlæse siden', 10000)
+      console.log(this.errorMessage = 'Error - ' + error.message)
     });
   }
 
@@ -111,18 +126,35 @@ class Home extends Component {
 
   render() {
 
-    var productSection = null;
+    var productSection = <ProductGridList
+                            selectedReservationProduct={this.state.selectedReservationProduct}
+                            handleProductDetailClick={this.handleProductDetailClick}
+                            reservationBtnClicked={this.reservationBtnClicked}
+                            products={this.state.products}
+                            imageURLs={this.state.productImageURLs}
+                          />;
 
+    /*
     if (this.state.isLoading) {
       productSection = <Preloader />;
     } else {
       productSection = <ProductGridList
+                          asyncFetchProducts={this.asyncFetchProducts}
                           selectedReservationProduct={this.state.selectedReservationProduct}
                           handleProductDetailClick={this.handleProductDetailClick}
                           reservationBtnClicked={this.reservationBtnClicked}
                           products={this.state.products}
                           imageURLs={this.state.productImageURLs}
                         />
+    }
+    */
+
+    var visibilitySensor = null;
+    if (!this.state.didReachBottom)
+    {
+      visibilitySensor = <VisibilitySensor delayedCall={true} onChange={this.asyncFetchProducts}>
+        <Preloader />
+      </VisibilitySensor>
     }
 
     return (
@@ -149,11 +181,12 @@ class Home extends Component {
         </div>
 
         <div className="section white">
-          <div className="row container">
+          <div className="container">
             <h3 className="primary-text headline">Tilbud</h3>
             <div className="divider"></div>
             {productSection}
           </div>
+          { visibilitySensor }
         </div>
 
         <div className="section grey darken-4">
