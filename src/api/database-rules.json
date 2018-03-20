@@ -1,0 +1,73 @@
+{
+  "rules": {
+    ".read": "root.child('users').child('isEmployee').val() === true",
+    ".write": "root.child('users').child('isEmployee').val() === true",
+    "contact-enquiries": {
+      ".read": "root.child('users').child('isEmployee').val() === true",
+      "$enquiry-id": {
+       	".write": true,
+    		".validate": "newData.hasChildren(['email', 'firstName', 'lastName', 'message'])"
+      }
+    },
+
+    "feedback": {
+      ".read": "root.child('users').child('isEmployee').val() === true",
+      "$feedback-id": {
+       	".write": true,
+      	".validate": "newData.hasChildren(['createdAt', 'description', 'locationPath'])"
+      }
+    },
+
+    "newsletter-subscribers": {
+      ".read": "root.child('users').child('isEmployee').val() === true",
+      "$subscriber-id": {
+       	".write": true,
+      	".validate": "newData.hasChildren(['email', 'firstName', 'lastName'])"
+      }
+    },
+
+    "product-reservations": {
+      ".read": "root.child('users').child('isEmployee').val() === true",
+      "$product-id": {
+        "$reservation-id": {
+       		".write": true,
+      		".validate": "newData.hasChildren(['createdAt', 'email', 'firstName', 'lastName', 'productName', 'productId'])"
+        }
+      }
+    },
+
+    "products": {
+      ".read": true,
+      "$product-id": {
+        ".write": "root.child('users').child('isEmployee').val() === true",
+      	".validate": "newData.hasChildren(['categoryName', 'createdAt', 'currencySymbol', 'descriptionText', 'discountPct', 'discountPrice', 'inStock', 'lastModifiedAt', 'name', 'subcategoryName'])"
+      }
+    },
+
+    "reservations": {
+      ".read": "root.child('users').child('isEmployee').val() === true",
+      "$reservation-id": {
+      	".write": true,
+      	".validate": "newData.hasChildren(['createdAt', 'email', 'firstName', 'lastName', 'productName', 'productId'])"
+      }
+    },
+
+    "survey": {
+      ".read": "root.child('users').child('isEmployee').val() === true",
+      "$survey-id": {
+       	".write": "root.child('users').child('isEmployee').val() === true",
+      	".validate": "newData.hasChildren(['createdAt', 'descriptionText', 'name', 'totalResponses'])"
+      }
+    },
+
+    "survey-responses": {
+      ".read": "root.child('users').child('isEmployee').val() === true",
+      "$survey-id": {
+        "$response-id": {
+          ".write": true,
+          ".validate": "newData.hasChildren(['comment', 'createdAt', 'overallService'])"
+        }
+      }
+    }
+  }
+}

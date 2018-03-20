@@ -37,7 +37,7 @@ class ProductGridList extends Component {
     }
 
     matchingImageURL(productId) {
-      var imageURL = "http://localhost:3000/images/product-placeholder.png";
+      var imageURL = require('../assets/product-placeholder.png');
       if (productId in this.props.imageURLs) {
         imageURL = this.props.imageURLs[productId];
       }

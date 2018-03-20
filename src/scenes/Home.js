@@ -108,7 +108,7 @@ class Home extends Component {
     e.stopPropagation();
 
     this.selectedReservationProduct = product;
-    this.selectedReservationProduct["firstImageURL"] = "http://localhost:3000/images/product-placeholder.png";
+    this.selectedReservationProduct["firstImageURL"] =  require('../assets/product-placeholder.png');
     this.setState({selectedReservationProduct: this.selectedReservationProduct});
 
     const storage = fire.storage();
@@ -160,7 +160,7 @@ class Home extends Component {
     return (
 
       <div>
-        <HeroImageView imageSrc={"http://localhost:3000/images/hero-golden-gate.jpeg"} height={500} />
+        <HeroImageView imageSrc={require('../assets/hero-golden-gate.jpeg')} height={500} />
 
         <div className="section grey lighten-5">
           <div className="container">
