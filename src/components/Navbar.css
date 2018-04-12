@@ -1,4 +1,4 @@
-nav .nav-items a:not(.activeLink) {
+nav .navlinks a:not(.activeLink) {
   color: rgba(255, 255, 255, 1.0);
 
   -webkit-transition: color 200ms;
@@ -7,11 +7,49 @@ nav .nav-items a:not(.activeLink) {
   transition: color 200ms;
 }
 
-nav .nav-items a:not(.activeLink):hover {
+nav .navlinks a:not(.activeLink):hover {
   color: rgba(255, 255, 255, 0.65);
-
+  background-color: rgba(255, 0, 0, 0.0) !important;
+  
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;
   transition: color 200ms;
+}
+
+.brand-logo {
+  font-family: 'Racing Sans One', cursive !important;
+}
+
+logo {
+  font-family: 'Racing Sans One', cursive !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-wrapper {
+    margin: 0 auto !important;
+    max-width: 1280px !important;
+    width: 90% !important;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .nav-wrapper {
+    margin: 0 auto !important;
+    max-width: 1280px !important;
+    width: 90% !important;
+  }
+}
+
+.button-collapse {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+@media only screen and (min-width: 993px) {
+  .nav-wrapper {
+    margin: 0 auto !important;
+    max-width: 1280px !important;
+    width: 85% !important;
+  }
 }

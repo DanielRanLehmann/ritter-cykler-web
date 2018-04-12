@@ -5,7 +5,8 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
-import fire from '../fire.js';
+// import fire from '../fire.js';
+import * as api from '../api/api.js';
 
 function ProductPreviewCell(props) {
   return (
@@ -107,14 +108,10 @@ class FeedbackModal extends Component {
       "locationPath": locationPath
     }
 
-    const newFeedbackKey = fire.database().ref().child('feedback').push().key;
-
-    const updates = {};
-    updates['/feedback/' + newFeedbackKey] = feedbackData;
-
-    fire.database().ref().update(updates).then(() => {
-      Materialize.toast("Tak for din feedback!", 4000);
-
+    api.sendFeedback(feedbackData, success => {
+      if (success) {
+        Materialize.toast("Tak for din feedback!", 4000);
+      }
     }).catch(function(error) {
       var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="this.handleSubmit; class="btn-flat toast-action">Prøv Igen</button>'));
       Materialize.toast($toastContent, 10000);

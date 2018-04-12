@@ -14,7 +14,7 @@ class Breadcrumbs extends Component {
     render() {
       return (
         <nav className="grey darken-4 z-depth-0">
-         <div className="nav-wrapper container">
+         <div className="nav-wrapper">
            <div className="col s12">
              {
                this.props.items.map((item) =>

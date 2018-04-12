@@ -1,8 +1,8 @@
 .tile {
-  border-bottom: 1px solid;
-  border-bottom-color: rgba(224,224,224,0.0);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(224,224,224,1.0);
   margin-top: 24px;
-  margin-bottom: 24px;
 }
 
 img {

@@ -62,6 +62,7 @@ class ContactForm extends Component {
       e.preventDefault();
 
       const enquiryData = {
+        "createdAt": new Date().getTime(),
         "firstName": this.state.firstName,
         "lastName": this.state.lastName,
         "email": this.state.email,
@@ -69,25 +70,13 @@ class ContactForm extends Component {
         "message": this.state.message
       }
 
-      console.log(enquiryData)
-
-      const newEnquiryKey = fire.database().ref().child('contact-enquiries').push().key;
-      const updates = {}
-      updates['/contact-enquiries/' + newEnquiryKey] = enquiryData;
-
-      fire.database().ref().update(updates).then(() => {
-        this.setState({successfulFormCompletion: true});
-
-      }).catch(function(error) {
-        var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="this.handleSubmit; class="btn-flat toast-action">Prøv Igen</button>'));
-        Materialize.toast($toastContent, 10000);
-      });
+      this.props.handleSubmit(e, enquiryData);
 
     }
 
     render() {
 
-      if (this.state.successfulFormCompletion) {
+      if (this.props.successfulFormCompletion) {
         return (
           <div>
             <h6 className="primary-text title">Tak! Din besked er sendt</h6>

@@ -1,0 +1,11 @@
+@media only screen and (max-width : 992px) {
+  .parallax-container {
+    max-height: 250px !important; /* or a little bit higher */
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .parallax-container {
+    max-height: 500px !important; /* or higher percentages. It's up to your taste */
+  }
+}

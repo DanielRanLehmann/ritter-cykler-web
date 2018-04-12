@@ -1,0 +1,44 @@
+[
+  {
+    "imageSrc": "http://localhost:3000/images/product-placeholder.png",
+    "title": "Lorem ipsum",
+    "normalPrice": 35999,
+    "currencySymbol": "kr",
+    "currencyCode": "DKK"
+  },
+  {
+    "imageSrc": "http://localhost:3000/images/product-placeholder.png",
+    "title": "Lorem ipsum",
+    "normalPrice": 35999,
+    "currencySymbol": "kr",
+    "currencyCode": "DKK"
+  },
+  {
+    "imageSrc": "http://localhost:3000/images/product-placeholder.png",
+    "title": "Lorem ipsum",
+    "normalPrice": 35999,
+    "currencySymbol": "kr",
+    "currencyCode": "DKK"
+  },
+  {
+    "imageSrc": "http://localhost:3000/images/product-placeholder.png",
+    "title": "Lorem ipsum",
+    "normalPrice": 35999,
+    "currencySymbol": "kr",
+    "currencyCode": "DKK"
+  },
+  {
+    "imageSrc": "http://localhost:3000/images/product-placeholder.png",
+    "title": "Lorem ipsum",
+    "normalPrice": 35999,
+    "currencySymbol": "kr",
+    "currencyCode": "DKK"
+  },
+  {
+    "imageSrc": "http://localhost:3000/images/product-placeholder.png",
+    "title": "Lorem ipsum",
+    "normalPrice": 35999,
+    "currencySymbol": "kr",
+    "currencyCode": "DKK"
+  }
+]

@@ -1,0 +1,17 @@
+.slick-slide.c {
+    display: inline-block;
+    vertical-align: middle;
+    float:none;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.slick-prev, .slick-next {
+  font-size: 15px !important;
+}
+
+ .slick-prev:before, .slick-next:before  {
+  content: '' !important;
+}

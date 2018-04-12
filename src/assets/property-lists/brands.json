@@ -1,0 +1,107 @@
+[
+  {
+    "imageName": "colnago-logo.png",
+    "title": "Colnago",
+    "href": "http://www.colnago.com/"
+  },
+  {
+    "imageName": "pinarello-logo.png",
+    "title": "Pinarello",
+    "href": "http://www.pinarello.com/it"
+  },
+  {
+    "imageName": "principia-logo.png",
+    "title": "Principia",
+    "href": "https://principia.dk/"
+  },
+  {
+    "imageName": "trek-logo.png",
+    "title": "Trek",
+    "href": "https://www.trekbikes.com/dk/da_DK/"
+  },
+  {
+    "imageName": "fondriest-logo.png",
+    "title": "Fondriest",
+    "href": "http://www.fondriestbici.com/"
+  },
+  {
+    "imageName": "giro-logo.png",
+    "title": "Giro",
+    "href": "http://www.giro.com/eu_en/"
+  },
+  {
+    "imageName": "mbk-logo.png",
+    "title": "MBK",
+    "href": "https://mbk-cykler.dk/"
+  },
+  {
+    "imageName": "cube-logo.png",
+    "title": "Cube",
+    "href": "https://www.cube.eu/cube-bikes/"
+  },
+  {
+    "imageName": "limar-logo.png",
+    "title": "Limar",
+    "href": "http://www.limar.com/site/index.php?lng=eng"
+  },
+  {
+    "imageName": "reynolds-logo.png",
+    "title": "Reynolds",
+    "href": "https://reynoldscycling.com/"
+  },
+  {
+    "imageName": "nutcase-logo.png",
+    "title": "Nutcase",
+    "href": "http://dk.nutcasehelmets.com/"
+  },
+  {
+    "imageName": "bell-logo.png",
+    "title": "Bell",
+    "href": "https://www.bellhelmets.com/en_eu/"
+  },
+  {
+    "imageName": "ritterplus-logo.png",
+    "title": "Ritter Plus",
+    "href": "http://www.ritterplus.dk/"
+  },
+  {
+    "imageName": "mavic-logo.png",
+    "title": "Mavic",
+    "href": "https://www.mavic.com/en-int?noredirect=1"
+  },
+  {
+    "imageName": "sidi-logo.png",
+    "title": "Sidi",
+    "href": "http://www.sidi.com/"
+  },
+  {
+    "imageName": "nalini-logo.png",
+    "title": "Nalini",
+    "href": "https://www.nalini.com/it/ss18/"
+  },
+  {
+    "imageName": "spinergy-logo.png",
+    "title": "Spinergy",
+    "href": "https://www.spinergy.com/"
+  },
+  {
+    "imageName": "zipp-logo.png",
+    "title": "Zipp",
+    "href": "http://www.zipp.com/"
+  },
+  {
+    "imageName": "oakley-logo.png",
+    "title": "Oakley",
+    "href": "http://www.oakley.com/"
+  },
+  {
+    "imageName": "garmin-logo.png",
+    "title": "Garmin",
+    "href": "http://www.garmin.com/da-DK"
+  },
+  {
+    "imageName": "bontrager-logo.png",
+    "title": "Bontrager",
+    "href": "https://www.trekbikes.com/us/en_US/bontrager/"
+  }
+]

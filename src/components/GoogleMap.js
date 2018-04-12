@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import GoogleMapReact from 'google-map-react'
-
-const AnyReactComponent = ({ text }) => <div>{ text }</div>;
+import GoogleMapReact, {Marker} from 'google-map-react'
 
 const GoogleMapConfig = {
 	key: "AIzaSyAyaFMZLf12RclvrGaN-ZMUoWCtAIIrJOk"
@@ -13,18 +11,24 @@ class GoogleMap extends React.Component {
     zoom: 17
   };
 
+	renderMarkers(map, maps) {
+		let marker = new maps.Marker({
+			position: {lat: 55.772151, lng: 12.508030},
+			map,
+			title: 'Ritter Cykler'
+		});
+	}
+
   render() {
     return (
        <GoogleMapReact
 			 	bootstrapURLKeys={GoogleMapConfig}
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
+				onGoogleApiLoaded={({map, maps}) =>
+						this.renderMarkers(map, maps)
+				}
       >
-        <AnyReactComponent
-          lat={55.7721422}
-          lng={12.507891}
-          text={'Ritter Cykler'}
-        />
       </GoogleMapReact>
     );
   }

@@ -39,6 +39,7 @@ class Footer extends Component {
                     <li><Link to={'/vaerksted-og-priser'} className="body-1 green-text text-accent-3" activeClassName="active">Værksted Og Priser</Link></li>
                     <li><Link to={'/kontakt'} className="body-1 green-text text-accent-3" activeClassName="active">Kontakt</Link></li>
                     <li><Link to={'/reklamation-og-returregler'} className="body-1 green-text text-accent-3" activeClassName="active">Reklamation og Returregler</Link></li>
+                    <li><Link to={'/om-os'} className="body-1 green-text text-accent-3" activeClassName="active">Om os</Link></li>
                   </ul>
                 </div>
               </div>

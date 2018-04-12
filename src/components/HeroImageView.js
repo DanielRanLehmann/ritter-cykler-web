@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './HeroImageView.css';
 
 import $ from 'jquery';
 import Materialize from 'materialize-css';
@@ -20,7 +21,7 @@ class HeroImageView extends Component {
       if (this.props.height) { height = this.props.height; }
 
       return (
-        <div style={{"height": height}} className="parallax-container">
+        <div className="parallax-container">
            <div className="parallax"><img src={this.props.imageSrc}/></div>
          </div>
       );

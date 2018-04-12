@@ -9,23 +9,21 @@ import 'materialize-css/dist/css/materialize.min.css';
 import Navbar from './components/Navbar.js';
 import FeedbackButton from './components/FeedbackButton.js';
 
+/*
 import Home from './scenes/Home.js';
 import Brands from './scenes/Brands.js';
 import WorkshopAndPrices from './scenes/WorkshopAndPrices.js';
 import Contact from './scenes/Contact.js';
-
 import ProductDetails from './scenes/ProductDetails.js';
+*/
+
+// find cookie legislation for DK.
+import CookieBanner from 'react-cookie-banner';
 
 import Footer from './components/Footer.js';
 import FeedbackModal from './components/FeedbackModal.js';
 
-import Main from './Main.js'
-/*
-<ProductDetails
-  productId={"-L5ck1XUopm8SLknYkiq"}
-  breadcrumbs={[ <a href="/" className="white-text breadcrumb"><i className="dark-secondary-text material-icons">home</i></a> ]}
-/>
-*/
+import Main from './viewcontrollers/Main.js';
 
 class App extends Component {
 
@@ -52,6 +50,11 @@ class App extends Component {
 
         <FeedbackModal locationPath={window.location.pathname} />
 
+        <CookieBanner
+          message="Yes, we use cookies. If you don't like it change website, we won't miss you!"
+          onAccept={() => {}}
+          cookie="user-has-accepted-cookies" />
+          
       </div>
     );
   }

@@ -4,16 +4,30 @@ import { BrowserRouter } from 'react-router-dom'
 
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
-/*
-ReactDOM.render(<App />, document.getElementById('root'));
-*/
+import { hydrate, render } from 'react-dom';
+import {IntlProvider, addLocaleData} from 'react-intl';
+import da from 'react-intl/locale-data/da';
 
-ReactDOM.render((
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-), document.getElementById('root'));
+// https://github.com/yahoo/react-intl/wiki#loading-locale-data
+addLocaleData([...da]);
 
-registerServiceWorker();
+const rootElement = document.getElementById('root');
+if (rootElement.hasChildNodes()) {
+  hydrate(
+    <IntlProvider locale="da-DK">
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </IntlProvider>,
+  rootElement);
+} else {
+  render(
+    <IntlProvider locale="da-DK">
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </IntlProvider>,
+    rootElement);
+}

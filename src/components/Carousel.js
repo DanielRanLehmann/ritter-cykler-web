@@ -1,49 +1,74 @@
-import React, { Component } from 'react';
-// import './Carousel.css';
+import React, { Component } from 'react'
+import Slider from 'react-slick'
 
-import $ from 'jquery';
-import Materialize from 'materialize-css';
-import 'materialize-css/dist/css/materialize.min.css';
+import './Carousel.css'
 
-function CarouselItem(props) {
+function NextArrow(props) {
+  const {className, style, onClick} = props
   return (
-    <a className="carousel-item" href={props.href}>
-      <img src={props.src}/>
-    </a>
-  )
+    <div
+      className={className}
+      style={{...style, display: 'block', background: 'clear'}}
+      onClick={onClick}
+    ><i className="grey-text material-icons small">chevron_right</i></div>
+  );
+}
+
+function PrevArrow(props) {
+  const {className, style, onClick} = props
+  return (
+    <div
+      className={className}
+      style={{...style, display: 'block', background: 'clear'}}
+      onClick={onClick}
+    ><i className="grey-text material-icons small">chevron_left</i></div>
+  );
 }
 
 class Carousel extends Component {
-    constructor(props) {
-      super(props);
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      nav1: null
     }
+  }
 
-    componentDidMount() {
-      $(document).ready(function(){
-        $('.carousel').carousel({
-          indicators: true,
-          fullWidth: true,
-          shift: 4,
-        });
-      });
-    }
+  componentDidMount() {
+    this.setState({
+      nav1: this.slider1
+    })
+  }
 
-    componentWillUnmount() {
-      $('.carousel').carousel("destroy");
-    }
+  render() {
+    var settings = {
+      adaptiveHeight: false,
+      focusOnSelect: true,
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow />,
+      lazyLoad: false,
+      centerMode: false
+    };
 
-    render() {
-      return (
-        <div className="carousel carousel-slider">
-          {
-            this.props.items.map((item) =>
-              <CarouselItem href={item.href} src={item.src}/>
-            )
-          }
-        </div>
-      );
-    }
+    return (
+      <div style={{"paddingTop": "25px", "paddingLeft": "25px", "paddingRight": "25px"}}>
+        <Slider {...settings}
+            ref={slider => this.slider1 = slider}
+            >
+            {
+              this.props.imageURLs.map((imageURL) =>
+              <div className="c"><img height="512px" style={{"max_height": "512px", "object-fit": "cover", "overflow": "hiddden"}} src={imageURL}/></div>
+              )
+            }
+          </Slider>
+      </div>
+    );
+  }
 }
 
 export default Carousel;

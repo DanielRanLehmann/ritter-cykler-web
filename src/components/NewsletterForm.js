@@ -64,12 +64,16 @@ class NewsletterForm extends Component {
         }
       }
       const subscriberData = {
+        "createdAt": new Date().getTime(),
         "firstName": this.state.firstName.capitalize(),
         "lastName": this.state.lastName.capitalize(),
         "email": this.state.email,
         "phone": _phone
       }
 
+      this.props.handleSubmit(e, subscriberData);
+
+      /*
       const newSubscriberKey = fire.database().ref().child('newsletter-subscribers').push().key;
 
       const updates = {};
@@ -82,12 +86,13 @@ class NewsletterForm extends Component {
         var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="this.handleSubmit; class="btn-flat toast-action">Prøv Igen</button>'));
         Materialize.toast($toastContent, 10000);
       });
+      */
 
     }
 
     render() {
 
-      if (this.state.successfulFormCompletion) {
+      if (this.props.successfulFormCompletion) {
         var successDescription = "Du vil løbende få masser af spændende tilbud over email";
         if (this.state.phone) {
           successDescription +=  " og telefonen.";
