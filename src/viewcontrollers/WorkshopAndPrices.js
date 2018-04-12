@@ -5,11 +5,11 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
-import HeaderView from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/HeaderView.js';
-import FAB from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/FloatingActionButton.js';
+import HeaderView from '../components//HeaderView.js';
+import FAB from '../components/FloatingActionButton.js';
 
-import WorkshopPricesTable from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/WorkshopPricesTable.js';
-import WorkshopSurveyForm from '/Users/danielranlehmann/Desktop/ritter-cykler-web/src/components/WorkshopSurveyForm.js';
+import WorkshopPricesTable from '../components/WorkshopPricesTable.js';
+import WorkshopSurveyForm from '../components/WorkshopSurveyForm.js';
 
 import workshopPricesData from '../assets/property-lists/workshop-prices.json';
 
