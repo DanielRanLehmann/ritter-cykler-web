@@ -54,57 +54,59 @@ class Navbar extends Component {
             <li><a className="black-text disabled" href="#!">Medarbejder</a></li>
           </ul>
 
-          <nav className="grey darken-4 z-depth-0 nav-extended">
-            <div className="nav-wrapper">
+          <div className="navbar-fixed">
+            <nav className="transparent z-depth-0 nav-extended">
+              <div className="nav-wrapper">
 
-              <NavLink to={'/'} className="brand-logo dark-primary-text title" activeClassName="active">Bike Shop</NavLink>
-              <a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
+                <NavLink to={'/'} className="brand-logo dark-primary-text title" activeClassName="active">Bike Shop</NavLink>
+                <a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
 
-              <ul className="navlinks right hide-on-med-and-down">
-                <li>
-                  <NavLink exact
-                    key="home"
-                    to="/"
-                    activeStyle={{ backgroundColor: "#212121", opacity: 0.65, color: 'white'}}
-                    activeClassName="active">FORSIDE
-                  </NavLink>
-                </li>
+                <ul className="navlinks right hide-on-med-and-down">
+                  <li>
+                    <NavLink exact
+                      key="home"
+                      to="/"
+                      activeStyle={{ backgroundColor: "#212121", opacity: 0.65, color: 'white'}}
+                      activeClassName="active">FORSIDE
+                    </NavLink>
+                  </li>
 
-                <li>
-                  <NavLink
-                    key="brands"
-                    to="/maerker"
-                    activeStyle={{opacity: 0.65, color: 'white'}}
-                    activeClassName="active">MÆRKER
-                  </NavLink>
-                </li>
+                  <li>
+                    <NavLink
+                      key="brands"
+                      to="/maerker"
+                      activeStyle={{opacity: 0.65, color: 'white'}}
+                      activeClassName="active">MÆRKER
+                    </NavLink>
+                  </li>
 
-                <li>
-                  <NavLink
-                    key="workshop"
-                    to="/vaerksted-og-priser"
-                    activeStyle={{ opacity: 0.65, color: 'white'}}
-                    activeClassName="active">VÆRKSTED OG PRISER
-                  </NavLink>
-                </li>
+                  <li>
+                    <NavLink
+                      key="workshop"
+                      to="/vaerksted-og-priser"
+                      activeStyle={{ opacity: 0.65, color: 'white'}}
+                      activeClassName="active">VÆRKSTED OG PRISER
+                    </NavLink>
+                  </li>
 
-                <li>
-                  <NavLink
-                    key="contact"
-                    to="/kontakt"
-                    activeStyle={{ opacity: 0.65, color: 'white'}}
-                    activeClassName="active">KONTAKT
-                  </NavLink>
-                </li>
+                  <li>
+                    <NavLink
+                      key="contact"
+                      to="/kontakt"
+                      activeStyle={{ opacity: 0.65, color: 'white'}}
+                      activeClassName="active">KONTAKT
+                    </NavLink>
+                  </li>
 
-                <li>
-                  <a className="dropdown-button" data-activates='dropdown1'>MERE</a>
-                </li>
-              </ul>
+                  <li>
+                    <a className="dropdown-button" data-activates='dropdown1'>MERE</a>
+                  </li>
+                </ul>
 
-              <SideNav/>
-            </div>
-          </nav>
+                <SideNav/>
+              </div>
+            </nav>
+          </div>
         </div>
 
       );

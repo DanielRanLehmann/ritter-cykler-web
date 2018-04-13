@@ -20,6 +20,9 @@ import ProductGridList from '../components/ProductGridList.js';
 
 import * as api from '../api/api.js';
 
+import '@material/typography/dist/mdc.typography.css'; // place in either index.js or app.js
+import HeroBanner from '../components/HeroBanner.js';
+
 // list only for testing purposes of
 // hero images
 import heroImages from '../assets/property-lists/hero-images.json';
@@ -145,6 +148,7 @@ class Home extends Component {
       </VisibilitySensor>
     }
 
+    // <HeroImageView imageSrc={heroImages["img_01"]} height={500} />
     return (
 
       <div>
@@ -160,17 +164,12 @@ class Home extends Component {
             <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
         </Helmet>
 
-        <HeroImageView imageSrc={heroImages["img_01"]} height={500} />
+
+        <HeroBanner imgSrc={heroImages["img_01"]} height={500} />
 
         <div className="section grey lighten-5">
           <div className="container">
             <FeaturedBrands />
-          </div>
-        </div>
-
-        <div className="section white">
-          <div className="row container">
-            <WelcomeBlurb />
           </div>
         </div>
 
@@ -182,7 +181,7 @@ class Home extends Component {
 
         <div className="section white">
           <div className="container">
-            <h3 className="primary-text headline">Udvalgte tilbud</h3>
+            <h3 className="primary-text mdc-typography--display1">Udvalgte tilbud</h3>
             <div className="divider"></div>
             {productSection}
           </div>

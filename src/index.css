@@ -1,7 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.navbar-fixed {
+  position: absolute !important;
+  z-index:999999999 !important;
 }
 
 .display-1 {

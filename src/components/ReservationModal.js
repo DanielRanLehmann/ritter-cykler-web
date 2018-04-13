@@ -52,6 +52,7 @@ class ReservationModal extends Component {
 
   handleReservation(e) {
 
+    // this needs to be updated slightly.
     const reservationData = {
       "createdAt": new Date().getTime(),
       "productId": this.props.product.id,
@@ -68,7 +69,6 @@ class ReservationModal extends Component {
       "currencySymbol": this.props.product.currencySymbol,
     }
 
-    console.log(reservationData);
     this.props.handleSubmit(e, reservationData);
   }
 
@@ -79,11 +79,6 @@ class ReservationModal extends Component {
     const daysInAdvance = 14;
     var maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + daysInAdvance);
-
-    console.log("minDate")
-    console.log(minDate)
-    console.log("maxDate")
-    console.log(maxDate)
 
     this.$selectQTY = $(this.selectQTY);
     this.handleQTYChange = this.handleQTYChange.bind(this);

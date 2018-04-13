@@ -13,12 +13,45 @@ import WorkshopSurveyForm from '../components/WorkshopSurveyForm.js';
 
 import workshopPricesData from '../assets/property-lists/workshop-prices.json';
 
+import * as api from '../api/api.js';
+
 class WorkshopAndPrices extends Component {
+
+  constructor() {
+    super();
+
+    // put survey form states here.
+    this.state = {
+      isSurveyCompleted: false,
+      successfulSurveyCompletion: false
+    };
+
+    this.callbackSurveyForm = this.callbackSurveyForm.bind(this);
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     document.title = "Værksted og Priser - Ritter Cykler"
   }
+
+  callbackSurveyForm(e, responseData) {
+    e.preventDefault();
+
+    api.sendSurveyResponse("-L63fDO7f_YjdvGHRXb8", responseData, success => {
+      if (success) {
+        this.setState({
+          isSurveyCompleted: true,
+          successfulSurveyCompletion: true
+        });
+      }
+    })
+    /*
+    .catch( (error) => {
+      console.log(this.errorMessage = 'Error - ' + error.message)
+    });
+    */
+  }
+
   render() {
     return (
 
@@ -40,7 +73,11 @@ class WorkshopAndPrices extends Component {
         <div className="white section">
           <div className="container">
             <div className="divider"></div>
-            <WorkshopSurveyForm surveyId={"-L63fDO7f_YjdvGHRXb8"}/>
+            <WorkshopSurveyForm
+              handleSubmit={this.callbackSurveyForm}
+              isSurveyCompleted={this.state.isSurveyCompleted}
+              successfulSurveyCompletion={this.state.successfulSurveyCompletion}
+            />
           </div>
         </div>
 

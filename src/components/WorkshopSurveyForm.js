@@ -85,12 +85,11 @@ class WorkshopSurveyForm extends Component {
     constructor(props) {
     super(props);
     this.state = {
-      surveyId: props.surveyId,
       selectedOption : null,
       checkedBoxes: new Set(),
       descriptionText: null,
-      isSurveyCompleted: false,
-      successfulSurveyCompletion: false
+      isSurveyCompleted: this.props.isSurveyCompleted,
+      successfulSurveyCompletion: this.props.successfulSurveyCompletion
     };
 
     this.checkedBoxes = new Set();
@@ -144,12 +143,9 @@ class WorkshopSurveyForm extends Component {
     }
   }
 
+  // deprecated.
   handleSubmit(e) {
     e.preventDefault();
-
-    const surveyData = {
-      "name": ""
-    }
 
     const responseData = {
       "createdAt": new Date().getTime(),
@@ -158,28 +154,13 @@ class WorkshopSurveyForm extends Component {
       "comment": this.state.descriptionText,
     }
 
-    // verify surveyResponse object, first?
-    fire.database().ref('/surveys/' + this.state.surveyId + "/totalResponses").once('value').then((snapshot) => {
-      const totalResponses = snapshot.val();
-
-      var newResponseKey = fire.database().ref().child('survey-responses').push().key;
-
-      var updates = {};
-      updates['/surveys/' + this.state.surveyId + "/totalResponses"] = totalResponses + 1;
-      updates['/survey-responses/' + this.state.surveyId + '/' + newResponseKey] = responseData;
-      fire.database().ref().update(updates).then(() => {
-        this.setState({ isSurveyCompleted: true, successfulSurveyCompletion: true});
-
-      }).catch(function(error) {
-        this.setState({ isSurveyCompleted: true, successfulSurveyCompletion: false});
-      });
-    });
+    this.props.handleSubmit(e, responseData);
   }
 
   render() {
 
-    if (this.state.isSurveyCompleted) {
-      if (this.state.successfulSurveyCompletion) {
+    if (this.props.isSurveyCompleted) {
+      if (this.props.successfulSurveyCompletion) {
         return (
           <div>
             <div className="section">
@@ -231,7 +212,7 @@ class WorkshopSurveyForm extends Component {
           <h4 className="primary-text body-2">Er der noget yderligere vi kan gøre for at forbedre vores service?</h4>
           <form className="col s12">
             <div className="row">
-              <div className="input-field col s12">
+              <div className="input-field col s12 m10 l8">
                 <textarea value={this.state.descriptionText} onChange={this.handleDescriptionChange} id="textarea1" className="materialize-textarea" data-length="140"></textarea>
                 <label htmlFor="textarea1">Kommentar</label>
               </div>

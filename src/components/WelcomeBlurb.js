@@ -20,8 +20,8 @@ class WelcomeBlurb extends Component {
     render() {
       return (
         <div className="center">
-          <h1 className="display-1 primary-text"><span><b>RitterCykler</b></span> er din forhandler inden for cykler og cykeludstyr</h1>
-          <p className="secondary-text flow-text">Vores medarbejdere står klar til at hjælpe dig til at finde det udstyr eller den cykel, der passer netop dig. Hvad enten det er mountainbike, racer eller ny hverdagscykel. Vi rådgiver dig efter dine behov og vores erfaring.</p>
+          <h1 className="white-text mdc-typography--display2 dark-primary-text">Din forhandler inden for cykler og cykeludstyr</h1>
+          <p className="white-text dark-secondary-text mdc-typography--headline">Vores medarbejdere står klar til at hjælpe dig til at finde det udstyr eller den cykel, der passer netop dig. Hvad enten det er mountainbike, racer eller ny hverdagscykel. Vi rådgiver dig efter dine behov og vores erfaring.</p>
         </div>
       );
     }

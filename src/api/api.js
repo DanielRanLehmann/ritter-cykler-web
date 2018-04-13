@@ -43,6 +43,7 @@ export function asyncFetchProductDetails(productId, callback) {
   });
 }
 
+// don't use this.
 export function asyncFetchProductImageURL(productId, imageName, callback) {
   var imageRef = storage.ref("product-images/" + productId + "/" + imageName);
   imageRef.getDownloadURL().then((url) => {
@@ -110,4 +111,30 @@ export function subscribeToNewsletter(subscriberData, callback) {
   return fire.database().ref().update(updates).then(() => {
     callback(true);
   });
+}
+
+export function sendSurveyResponse(surveyId, responseData, callback) {
+  if (!responseData) {
+    throw("no response data found");
+  }
+
+  fire.database().ref('/surveys/' + surveyId).once('value').then((snapshot) => {
+    if (!snapshot.exists()) {
+      throw("survey not found with id: " + this.staet.surveyId);
+    }
+
+    const surveyData = snapshot.val();
+    const totalResponses = surveyData.totalResponses;
+
+    var newResponseKey = fire.database().ref().child('survey-responses').push().key;
+
+    var updates = {};
+    updates['/surveys/' + surveyId + "/totalResponses"] = totalResponses + 1;
+    updates['/survey-responses/' + surveyId + '/' + newResponseKey] = responseData;
+
+    return fire.database().ref().update(updates).then(() => {
+      callback(true);
+    });
+  });
+
 }
