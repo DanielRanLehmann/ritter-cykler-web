@@ -40,8 +40,8 @@ class AboutUs extends Component {
 
         <div className="section">
           <div className="container">
-            <h1 className="center primary-text mdc-typography--display1">Medarbejdere</h1>
-            <p className="center primary-text mdc-typography--subheading1">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <h1 className="center primary-text text-headline">Medarbejdere</h1>
+            <p className="center primary-text text-subhead">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             <div className="row">
             {
               employeesData.map((employee) =>
@@ -59,8 +59,8 @@ class AboutUs extends Component {
 
         <div className="grey lighten-4 section">
           <div className="container">
-            <h1 className="center primary-text headline">Mange tilfredse kunder</h1>
-            <p className="center primary-text body-1">Et vivendo comprehensam eam</p>
+            <h1 className="center primary-text text-headline">Mange tilfredse kunder</h1>
+            <p className="center primary-text text-subhead">Et vivendo comprehensam eam</p>
             <div className="row">
               {
                 storeReviewsData.map((review) =>

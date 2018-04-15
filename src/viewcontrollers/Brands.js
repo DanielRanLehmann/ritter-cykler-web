@@ -26,12 +26,17 @@ class Brands extends Component {
   render() {
     return (
       <div>
-        <HeaderView
-          title={ "Mærker" }
-          subtitle={ "Vi fører følgende mærker i butikken"}
-        />
 
-        <div className="white">
+        <div className="white section">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m12 l10 xl6">
+                <h6 className="text-display-1 green-text text-accent-3">Mærker</h6>
+                <span className="primary-text text-subhead">Vi fører følgende mærker i butikken</span>
+              </div>
+            </div>
+          </div>
+
           <div className="container">
             <BrandsGridList tiles={brandsData}/>
           </div>

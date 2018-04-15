@@ -14,7 +14,7 @@ class HeroBanner extends Component {
 
     componentDidMount() {
       // NOTE: This can cause a crash if switching quickly from a vc -> b vc
-      
+
       setTimeout(function(){
          document.getElementById('vid').play();
       }, 1000);
@@ -27,9 +27,9 @@ class HeroBanner extends Component {
           <section className="video-container">
             <video id="vid" src={require('../assets/Lyngby Storcenter - Ritter Cykler-Cqk8SYYRib8.mp4')} muted autoplay loop playsinline></video>
             <div className="callout container">
-              <h1 className="white-text mdc-typography--display3 dark-primary-text">Din forhandler inden for cykler og cykeludstyr</h1>
+              <h1 className="white-text text-display-3 dark-primary-text">Din forhandler inden for cykler og cykeludstyr</h1>
               <div>
-                <p className="white-text dark-secondary-text mdc-typography--headline">Vores medarbejdere står klar til at hjælpe dig til at finde det udstyr eller den cykel, der passer netop dig. Hvad enten det er mountainbike, racer eller ny hverdagscykel. Vi rådgiver dig efter dine behov og vores erfaring.</p>
+                <p className="white-text dark-secondary-text text-headline">Vores medarbejdere står klar til at hjælpe dig til at finde det udstyr eller den cykel, der passer netop dig. Hvad enten det er mountainbike, racer eller ny hverdagscykel. Vi rådgiver dig efter dine behov og vores erfaring.</p>
                 <i className="white-text medium material-icons">play_circle_filled</i>
               </div>
             </div>

@@ -87,8 +87,8 @@ class NewsletterForm extends Component {
         return (
           <div>
             <div className="section">
-              <h4 className="white-text dark-primary-text body-2">Tak! Du er nu tilmeldt vores nyhedsbrev</h4>
-              <p className="white-text dark-primary-text body-1">{successDescription}</p>
+              <h4 className="white-text dark-primary-text text-body"><b>Tak! Du er nu tilmeldt vores nyhedsbrev</b></h4>
+              <p className="white-text dark-primary-text text-body">{successDescription}</p>
             </div>
           </div>
         );
@@ -107,9 +107,9 @@ class NewsletterForm extends Component {
       return (
         <div className="row">
           <div className="col s12 m6">
-            <p className="green-text text-accent-3 mdc-typography--subheading2">NYHEDSBREV</p>
-            <h5 className="white-text mdc-typography--display2">Ja Tak!<br/>Send mig gerne email&#39;s og sms&#39;er om sidste nyt fra Bike Shop</h5>
-            <p className="dark-secondary-text white-text mdc-typography--subheading2">* Vi opbevarer din e-mail adresse og dit telefonnummer sikkert og giver eller sælger dem ikke videre til tredjepart.</p>
+            <p className="green-text text-accent-3 text-subhead">NYHEDSBREV</p>
+            <h5 className="white-text text-display-1">Ja Tak!<br/>Send mig gerne email&#39;s og sms&#39;er om sidste nyt fra Bike Shop</h5>
+            <p className="dark-secondary-text white-text text-subhead">* Vi opbevarer din e-mail adresse og dit telefonnummer sikkert og giver eller sælger dem ikke videre til tredjepart.</p>
           </div>
           <div className="col s12 m6">
             <form>

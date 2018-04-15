@@ -79,8 +79,8 @@ class ContactForm extends Component {
       if (this.props.successfulFormCompletion) {
         return (
           <div>
-            <h6 className="primary-text mdc-typography--headline">Tak! Din besked er sendt</h6>
-            <p className="secondary-text mdc-typography--subheading1">Du kan forvente en svartid på 1-2 arbejdsdage.</p>
+            <h6 className="primary-text text-headline">Tak! Din besked er sendt</h6>
+            <p className="primary-text text-subhead">Du kan forvente en svartid på 1-2 arbejdsdage.</p>
           </div>
         );
       }
@@ -94,8 +94,8 @@ class ContactForm extends Component {
 
       return (
         <div>
-          <h6 className="primary-text mdc-typography--headline">Send os en besked</h6>
-          <p className="secondary-text mdc-typography--subheading1">Du kan forvente en svartid på 1-2 arbejdsdage.</p>
+          <h6 className="primary-text text-headline">Send os en besked</h6>
+          <p className="secondary-text text-subhead">Du kan forvente en svartid på 1-2 arbejdsdage.</p>
 
           <form>
             <div className="row">

@@ -8,7 +8,7 @@ function Stars(props) {
   if (!props.rating || props.rating > 5.0) {
     return null;
   }
-  
+
   var iconNames = ["star_border", "star_border", "star_border", "star_border", "star_border"];
   for (var i = 0; i < Math.floor(props.rating); i++) {
     iconNames[i] = "star"
@@ -41,8 +41,8 @@ class StoreReviewCard extends Component {
     return (
       <div className="left card-panel white z-depth-0">
         <Stars rating={this.props.starRating} />
-        <span className="primary-text mdc-typography--body-1">{this.props.body}</span><br/><br/>
-        <span className="secondary-text mdc-typography--body-1">{this.props.author}</span>
+        <span className="primary-text text-subhead">{this.props.body}</span><br/><br/>
+        <span className="secondary-text text-subhead">{this.props.author}</span>
       </div>
     );
   }

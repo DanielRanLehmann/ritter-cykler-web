@@ -57,12 +57,17 @@ class WorkshopAndPrices extends Component {
 
       <div>
 
-        <HeaderView
-          title={ "Værksted Og Priser" }
-          subtitle={ "Vores værksteds politik er at alt hvad vi kan reparer, laves til næste hverdag kl.17. Cykler kan indleveres i hele åbningstiden. Når cyklen er færdig, bliver der sendt en sms til kunden. Cyklen skal afhentes senest 30 min før lukketid."}
-        />
-
         <div className="white section">
+
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m12 l10 xl6">
+                <h6 className="text-display-1 green-text text-accent-3">Værksted og Priser</h6>
+                <span className="primary-text text-subhead">Alt hvad vi kan reparer, laves til næste hverdag kl.17. Cykler kan indleveres i hele åbningstiden. Når cyklen er færdig, bliver der sendt en sms til kunden. Cyklen skal afhentes <b>senest</b> 30 min før lukketid.</span>
+              </div>
+            </div>
+          </div>
+
           <div className="container">
             <WorkshopPricesTable rows={workshopPricesData} />
           </div>

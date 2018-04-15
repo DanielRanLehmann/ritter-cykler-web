@@ -14,8 +14,8 @@ function Row(props) {
 
   return (
     <tr>
-      <td className="primary-text mdc-typography--subheading1">{props.description}</td>
-      <td className="primary-text mdc-typography--subheading1">
+      <td className="primary-text text-body">{props.description}</td>
+      <td className="primary-text text-body">
         <FormattedNumber
             style='currency'
             currency={props.currency}
@@ -33,8 +33,8 @@ class WorkshopPricesTable extends Component {
       <table className="responsive-table highlight">
         <thead>
           <tr>
-              <th className="primary-text mdc-typography--subheading2"><b>Beskrivelse</b></th>
-              <th className="primary-text mdc-typography--subheading2"><b>Pris</b></th>
+              <th className="primary-text text-body"><b>Beskrivelse</b></th>
+              <th className="primary-text text-body"><b>Pris</b></th>
           </tr>
         </thead>
         <tbody>

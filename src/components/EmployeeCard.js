@@ -15,8 +15,8 @@ class EmployeeCard extends Component {
         </div>
 
         <div style={{"paddingTop":" 24px"}} className="col s12">
-          <span className="primary-text mdc-typography--title">{this.props.name}</span><br/><br/>
-          <span className="secondary-text mdc-typography--subheading2">{this.props.description}</span>
+          <span className="primary-text text-subhead"><b>{this.props.name}</b></span><br/><br/>
+          <span className="secondary-text text-subhead">{this.props.description}</span>
         </div>
 
       </div>

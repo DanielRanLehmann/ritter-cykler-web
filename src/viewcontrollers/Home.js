@@ -23,6 +23,8 @@ import * as api from '../api/api.js';
 import '@material/typography/dist/mdc.typography.css'; // place in either index.js or app.js
 import HeroBanner from '../components/HeroBanner.js';
 
+import '../typography.css';
+
 // list only for testing purposes of
 // hero images
 import heroImages from '../assets/property-lists/hero-images.json';
@@ -72,7 +74,7 @@ class Home extends Component {
 
   componentDidMount() {
       window.scrollTo(0, 0);
-      document.title = "Ritter Cykler";       
+      document.title = "Ritter Cykler";
   }
 
   handleNewsletterFormSubmit(e, subscriberData) {
@@ -181,7 +183,7 @@ class Home extends Component {
 
         <div className="section white">
           <div className="container">
-            <h3 className="primary-text mdc-typography--headline">Udvalgte tilbud</h3>
+            <h3 className="primary-text text-headline">Udvalgte tilbud</h3>
             <div className="divider"></div>
             {productSection}
           </div>
