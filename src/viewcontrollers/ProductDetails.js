@@ -275,7 +275,7 @@ class ProductDetails extends Component {
             <div className="container">
               <div className="row">
                 <div className="col s12 l6">
-                <p className="caption amber-text text-accent-4">{this.state.product.isNew ? "Nyhed" : null}</p>
+                <p className="caption amber-text text-accent-4">{this.state.product.isNew ? "Ny" : null}</p>
                 <h5 className="primary-text headline">{this.state.product.name}</h5>
                 <h5 className="primary-text subheading">
                   <FormattedNumber
