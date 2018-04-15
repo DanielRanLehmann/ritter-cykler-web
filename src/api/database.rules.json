@@ -1,26 +1,27 @@
 {
   "rules": {
-    ".read": "auth != null",
+
+    ".read": "auth != null && root.child('users').child(auth.uid).child('role').val() == 'admin'",
     ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() == 'admin'",
-    "contact-enquiries": {
+
+      "contact-enquiries": {
       ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
-      "$enquiry-id": {
+      "$enquiry": {
        	".write": true,
     		".validate": "newData.hasChildren(['createdAt', 'firstName', 'lastName', 'message', 'subject'])"
       }
     },
 
     "feedback": {
-      ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
-      "$feedback-id": {
+       ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
+      "$feedback": {
        	".write": true,
-      	".validate": "newData.hasChildren(['createdAt', 'description', 'locationPath'])"
+      	".validate": "newData.hasChildren(['createdAt', 'description', 'browser', 'locationPath'])"
       }
     },
 
     "newsletter-subscribers": {
-      ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
-      "$subscriber-id": {
+      "$subscriber": {
        	".write": true,
       	".validate": "newData.hasChildren(['email', 'firstName', 'lastName'])"
       }
@@ -28,56 +29,56 @@
 
     "product-reservations": {
       ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
-      "$product-id": {
-        "$reservation-id": {
-       		".write": true,
+      "$product": {
+      	"$reservation": {
+      		".write": true,
       		".validate": "newData.hasChildren(['createdAt', 'email', 'firstName', 'lastName', 'productName', 'productId'])"
-        }
+      	}
       }
     },
 
     "products": {
       ".read": true,
-      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() == 'admin'",
-      "$product-id": {
+      "$product": {
       	".validate": "newData.hasChildren(['categoryName', 'createdAt', 'currency', 'languageTag', 'descriptionText', 'discountPct', 'discountPrice', 'inStock', 'name', 'subcategoryName'])"
       }
     },
 
     "reservations": {
       ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
-      "$reservation-id": {
+      ".write": true,
+      "$reservation": {
       	".write": true,
       	".validate": "newData.hasChildren(['createdAt', 'email', 'firstName', 'lastName', 'productName', 'productId'])"
       }
     },
 
     "surveys": {
-      ".read": true,
+      ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
       ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
-        "$survey-id": {
+      "$survey": {
         "totalResponses": {
-          ".write": true,
-          ".read": true
+          ".read": true,
+          ".write": true
         },
-      	".validate": "newData.hasChildren(['createdAt', 'descriptionText', 'name', 'totalResponses'])"
+        ".validate": "newData.hasChildren(['createdAt', 'descriptionText', 'name', 'totalResponses'])"
       }
     },
 
     "survey-responses": {
       ".read": "auth != null && (root.child('users').child(auth.uid).child('role').val() == 'admin' || root.child('users').child(auth.uid).child('role').val() == 'employee')",
-      "$survey-id": {
-        "$response-id": {
+      "$survey": {
+        "$response": {
           ".write": true,
-          ".validate": "newData.hasChildren(['comment', 'createdAt', 'overallService'])"
+          ".validate": "newData.hasChildren(['createdAt', 'overallService'])"
         }
       }
     },
 
     "users": {
-      "$uid": {
-        ".read": "$uid === auth.uid",
-        ".write": "$uid === auth.uid"
+      "$user": {
+        ".read": "auth.uid === $user",
+        ".write": "auth.uid === $user"
       }
   	}
   }

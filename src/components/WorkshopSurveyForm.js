@@ -66,7 +66,7 @@ function CheckboxesSection(props) {
   var sectionPrefix = null;
   var form = null;
   if (props.selectedOption == "Good") {
-    sectionPrefix = "Super fedt!";
+    sectionPrefix = "Godt!";
     form = <GoodCheckboxesForm checkBoxLabels={props.checkBoxLabels} toggleCheckbox={props.toggleCheckbox} />;
   } else if (props.selectedOption == "Bad") {
     sectionPrefix = "Det er vi kede af at høre.";
@@ -75,7 +75,7 @@ function CheckboxesSection(props) {
 
   return (
     <div>
-      <h4 className="primary-text body-2">{sectionPrefix} Kan du fortælle mere om din oplevelse?</h4>
+      <h4 className="primary-text mdc-typography--subheading2"><b>{sectionPrefix} Kan du fortælle mere om din oplevelse?</b></h4>
       {form}
     </div>
   );
@@ -164,8 +164,8 @@ class WorkshopSurveyForm extends Component {
         return (
           <div>
             <div className="section">
-              <h4 className="primary-text body-2">Tak for din feedback!</h4>
-              <p className="primary-text body-1">Vi vil bruge denne information til at forbedre vores service yderligere.</p>
+              <h4 className="primary-text mdc-typography--subheading2"><b>Tak for din feedback!</b></h4>
+              <p className="primary-text mdc-typography--subheading2">Vi vil bruge denne information til at forbedre vores service yderligere.</p>
             </div>
           </div>
         );
@@ -173,8 +173,8 @@ class WorkshopSurveyForm extends Component {
         return (
           <div>
             <div className="section">
-              <h4 className="primary-text body-2">Ups! Der opstod en fejl</h4>
-              <p className="primary-text body-1">Prøv at genindlæs siden og prøv at indsend din feedback igen.</p>
+              <h4 className="primary-text mdc-typography--subheading2"><b>Ups! Der opstod en fejl</b></h4>
+              <p className="primary-text mdc-typography--subheading2">Prøv at genindlæs siden og prøv at indsend din feedback igen.</p>
             </div>
           </div>
         );
@@ -190,7 +190,7 @@ class WorkshopSurveyForm extends Component {
       <div className="section">
 
         <div className="section">
-          <h4 className="primary-text body-2">Allerede haft din cykel repareret hos os? Hvad syntes du om den service du fik?</h4>
+          <h4 className="primary-text mdc-typography--subheading2"><b>Allerede haft din cykel repareret hos os? Hvad syntes du om den service du fik?</b></h4>
 
           <form action="#">
             <p>
@@ -209,7 +209,7 @@ class WorkshopSurveyForm extends Component {
           <CheckboxesSection checkBoxLabels={this.checkBoxLabels} toggleCheckbox={this.toggleCheckbox} selectedOption={this.state.selectedOption}/>
         </div>
         <div className="section">
-          <h4 className="primary-text body-2">Er der noget yderligere vi kan gøre for at forbedre vores service?</h4>
+          <h4 className="primary-text mdc-typography--subheading2"><b>Er der noget yderligere vi kan gøre for at forbedre vores service?</b></h4>
           <form className="col s12">
             <div className="row">
               <div className="input-field col s12 m10 l8">

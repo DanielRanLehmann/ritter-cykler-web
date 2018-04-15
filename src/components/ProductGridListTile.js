@@ -17,16 +17,16 @@ class ProductGridListTile extends Component {
 
     }
 
+    // {this.props.product.isNew}
+
     render() {
-
-
       return (
         <div>
           <div onClick={ (e) => this.props.handleProductDetailClick(e, this.props.product) } style={{"cursor": "pointer"}} className="product-grid-list-tile product-tile center-align">
             <img height="235px" style={{"max_height": "235px", "object-fit": "cover", "overflow": "hiddden"}} className="product-cell-image" width="100%" src={this.props.product.imageURLs[0]}/>
-            <p className="amber-text text-accent-4 caption">NYHED</p>
-            <h5 className="truncate primary-text body-1">{this.props.name}</h5>
-            <p className="primary-text body-1">
+            <p className="amber-text text-accent-4 mdc-typography--subheading2">NYHED</p>
+            <h5 className="truncate primary-text mdc-typography--subheading2">{this.props.name}</h5>
+            <p className="primary-text mdc-typography--subheading2">
               <FormattedNumber
                   style='currency'
                   currency={this.props.product.currency}

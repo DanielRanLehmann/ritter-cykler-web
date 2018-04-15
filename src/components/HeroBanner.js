@@ -13,10 +13,13 @@ class HeroBanner extends Component {
     }
 
     componentDidMount() {
+      // NOTE: This can cause a crash if switching quickly from a vc -> b vc
+      
       setTimeout(function(){
          document.getElementById('vid').play();
-     },1000);
+      }, 1000);
     }
+
     render() {
 
       return (

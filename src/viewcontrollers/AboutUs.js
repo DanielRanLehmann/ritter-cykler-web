@@ -40,8 +40,8 @@ class AboutUs extends Component {
 
         <div className="section">
           <div className="container">
-            <h1 className="center primary-text headline">Medarbejdere</h1>
-            <p className="center primary-text body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <h1 className="center primary-text mdc-typography--display1">Medarbejdere</h1>
+            <p className="center primary-text mdc-typography--subheading1">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             <div className="row">
             {
               employeesData.map((employee) =>
@@ -66,6 +66,7 @@ class AboutUs extends Component {
                 storeReviewsData.map((review) =>
                   <div className="col s12 m6 l4">
                     <ReviewCard
+                      starRating={review.starRating}
                       body={review.body}
                       author={review.author}
                     />

@@ -10,7 +10,7 @@ nav .navlinks a:not(.activeLink) {
 nav .navlinks a:not(.activeLink):hover {
   color: rgba(255, 255, 255, 0.65);
   background-color: rgba(255, 0, 0, 0.0) !important;
-  
+
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;

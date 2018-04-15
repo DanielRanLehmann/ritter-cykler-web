@@ -276,8 +276,8 @@ class ProductDetails extends Component {
               <div className="row">
                 <div className="col s12 l6">
                 <p className="caption amber-text text-accent-4">{this.state.product.isNew ? "Nyhed" : null}</p>
-                <h5 className="primary-text headline">{this.state.product.name}</h5>
-                <h5 className="primary-text subheading">
+                <h5 className="primary-text mdc-typography--display1">{this.state.product.name}</h5>
+                <h5 className="primary-text mdc-typography--heading">
                   <FormattedNumber
                       style='currency'
                       currency={this.state.product.currency}
@@ -300,7 +300,7 @@ class ProductDetails extends Component {
                 />
 
                 <div style={{"paddingTop": "4px"}}>
-                  <p className="secondary-text body-1"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring til os på 45 87 66 01</p>
+                  <p className="secondary-text mdc-typography--subheading1"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring til os på 45 87 66 01</p>
                 </div>
 
                 <div className="divider"></div>
@@ -318,18 +318,18 @@ class ProductDetails extends Component {
         {mediaSection}
 
         <div className="section container row">
-            <h5 className="primary-text headline">Produkt Information</h5>
+            <h5 className="primary-text mdc-typography--headline">Produkt Information</h5>
             <div className="divider"></div>
 
             <div className="section">
               <div className="col s12">
                 <div className="row">
                   <div className="col l3 hide-on-med-and-down">
-                    <h5 className="primary-text subheading">Overblik</h5>
+                    <h5 className="primary-text mdc-typography--subheading2"><b>Overblik</b></h5>
                   </div>
                   <div className="col s12 l8 offset-l1">
-                    <h5 className="hide-on-large-only primary-text subheading">Overblik</h5>
-                    <p className="primary-text body-1">{this.state.product.descriptionText}</p>
+                    <h5 className="hide-on-large-only primary-text mdc-typography--subheading2"><b>Overblik</b></h5>
+                    <p className="primary-text mdc-typography--subheading2">{this.state.product.descriptionText}</p>
                   </div>
 
                 </div>
@@ -339,11 +339,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text subheading">Highlights</h5>
+                  <h5 className="primary-text mdc-typography--subheading2"><b>Highlights</b></h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text subheading">Highlights</h5>
-                  <ul className="primary-text body-1">
+                  <h5 className="hide-on-large-only primary-text mdc-typography--subheading2"><b>Highlights</b></h5>
+                  <ul className="primary-text mdc-typography--subheading1">
                   {
                     this.state.product.highlightTags.map((tag) =>
                       <li>{tag}</li>
@@ -358,11 +358,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text subheading">Lagde du mærke til?</h5>
+                  <h5 className="primary-text mdc-typography--subheading2"><b>Lagde du mærke til?</b></h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text subheading">Lagde du mærke til?</h5>
-                  <p className="primary-text body-1">{this.state.product.didYouNoticeText}</p>
+                  <h5 className="hide-on-large-only primary-text mdc-typography--subheading2"><b>Lagde du mærke til?</b></h5>
+                  <p className="primary-text mdc-typography--subheading1">{this.state.product.didYouNoticeText}</p>
                 </div>
 
               </div>
@@ -371,11 +371,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text subheading">Forslået brug</h5>
+                  <h5 className="primary-text mdc-typography--subheading2"><b>Forslået brug</b></h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text subheading">Forslået brug</h5>
-                  <p className="primary-text body-1">{this.state.product.recommendedText}</p>
+                  <h5 className="hide-on-large-only primary-text mdc-typography--subheading2"><b>Forslået brug</b></h5>
+                  <p className="primary-text mdc-typography--subheading1">{this.state.product.recommendedText}</p>
                 </div>
 
               </div>
@@ -384,11 +384,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text subheading">Ud af boksen</h5>
+                  <h5 className="primary-text mdc-typography--subheading2"><b>Ud af boksen</b></h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text subheading">Out of the box</h5>
-                  <ul className="primary-text body-1">
+                  <h5 className="hide-on-large-only primary-text mdc-typography--subheading2"><b>Out of the box</b></h5>
+                  <ul className="primary-text mdc-typography--subheading1">
                   {
                     this.state.product.outOfTheBoxTags.map((tag) =>
                       <li>{tag}</li>
@@ -403,11 +403,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text subheading">Tekniske specifikationer</h5>
+                  <h5 className="primary-text mdc-typography--subheading2"><b>Tekniske specifikationer</b></h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text subheading">Tekniske specifikationer</h5>
-                  <ul className="primary-text body-1">
+                  <h5 className="hide-on-large-only primary-text mdc-typography--subheading2"><b>Tekniske specifikationer</b></h5>
+                  <ul className="primary-text mdc-typography--subheading1">
                   {
                     this.state.product.techSpecTags.map((tag) =>
                       <li>{tag}</li>
@@ -421,11 +421,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text subheading">Fabrikant information</h5>
+                  <h5 className="primary-text mdc-typography--subheading2"><b>Fabrikant information</b></h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text subheading">Fabrikant information</h5>
-                  <ul className="primary-text body-1">
+                  <h5 className="hide-on-large-only primary-text mdc-typography--subheading2"><b>Fabrikant information</b></h5>
+                  <ul className="primary-text mdc-typography--subheading1">
                   {
                     this.state.product.manifacturerInfoTags.map((tag) =>
                       <li>{tag}</li>
@@ -440,7 +440,7 @@ class ProductDetails extends Component {
 
           <div className="section container">
 
-          <h5 className="primary-text headline">
+          <h5 className="primary-text mdc-typography--headline">
             Kommentarer
           </h5>
 

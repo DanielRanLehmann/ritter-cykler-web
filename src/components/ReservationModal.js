@@ -65,8 +65,7 @@ class ReservationModal extends Component {
       "qty": this.state.qty,
       "productSize": this.props.selectedSize,
       "total": (this.props.product.discountPrice * this.state.qty),
-      "currencyCode": this.props.product.currencyCode,
-      "currencySymbol": this.props.product.currencySymbol,
+      "currency": this.props.product.currency,
     }
 
     this.props.handleSubmit(e, reservationData);

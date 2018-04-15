@@ -64,13 +64,13 @@ class Contact extends Component {
             <div className="col s12 l6">
               <div className="white">
                 <div>
-                  <h6 className="primary-text title">Information</h6>
-                  <p className="primary-text body-1"><i className="left inline-small-icon material-icons green-text text-accent-3">location_on</i>Lyngby Storcenter 88, 2800 Kongens Lyngby *</p>
-                  <p className="primary-text body-1"><i className="left inline-small-icon material-icons green-text text-accent-3">phone</i>45 87 66 01</p>
-                  <p className="primary-text body-1"><i className="left inline-small-icon material-icons green-text text-accent-3">email</i>info@rittercykler.dk</p>
-                  <p className="primary-text body-1"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lørdag og Søndag 10:00 – 17:00 </p>
+                  <h6 className="primary-text mdc-typography--headline">Information</h6>
+                  <p className="primary-text mdc-typography--subheading1"><i className="left inline-small-icon material-icons green-text text-accent-3">location_on</i>Lyngby Storcenter 88, 2800 Kongens Lyngby *</p>
+                  <p className="primary-text mdc-typography--subheading1"><i className="left inline-small-icon material-icons green-text text-accent-3">phone</i>45 87 66 01</p>
+                  <p className="primary-text mdc-typography--subheading1"><i className="left inline-small-icon material-icons green-text text-accent-3">email</i>info@rittercykler.dk</p>
+                  <p className="primary-text mdc-typography--subheading1"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lørdag og Søndag 10:00 – 17:00 </p>
                 </div>
-                <p className="secondary-text body-1">* Ritter Cykler er beliggende på det lille torv. Det lille torv er placeret i den sydøstlige del af centeret ud til Klampenborgvej.<a className="green-text text-accent-3" href={require('../assets/lyngbystorcenter-centeroversigt-februar-2018.png')}> Se kort over lyngbystorcenter</a></p>
+                <p className="secondary-text mdc-typography--body1">* Ritter Cykler er beliggende på det lille torv. Det lille torv er placeret i den sydøstlige del af centeret ud til Klampenborgvej.<a className="green-text text-accent-3" href={require('../assets/lyngbystorcenter-centeroversigt-februar-2018.png')}> Se kort over lyngbystorcenter</a></p>
               <div>
 
                 <div className="row">

@@ -72,7 +72,7 @@ class Home extends Component {
 
   componentDidMount() {
       window.scrollTo(0, 0);
-      document.title = "Ritter Cykler";
+      document.title = "Ritter Cykler";       
   }
 
   handleNewsletterFormSubmit(e, subscriberData) {
@@ -181,7 +181,7 @@ class Home extends Component {
 
         <div className="section white">
           <div className="container">
-            <h3 className="primary-text mdc-typography--display1">Udvalgte tilbud</h3>
+            <h3 className="primary-text mdc-typography--headline">Udvalgte tilbud</h3>
             <div className="divider"></div>
             {productSection}
           </div>

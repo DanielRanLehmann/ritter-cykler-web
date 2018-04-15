@@ -5,6 +5,8 @@ import $ from 'jquery';
 import Materialize from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
+import {FormattedNumber} from 'react-intl';
+
 function Row(props) {
   if (!props.description && !props.price) {
     return null;
@@ -12,8 +14,14 @@ function Row(props) {
 
   return (
     <tr>
-      <td>{props.description}</td>
-      <td>{props.price}</td>
+      <td className="primary-text mdc-typography--subheading1">{props.description}</td>
+      <td className="primary-text mdc-typography--subheading1">
+        <FormattedNumber
+            style='currency'
+            currency={props.currency}
+            value={props.price}
+        />
+      </td>
     </tr>
   )
 }
@@ -25,14 +33,14 @@ class WorkshopPricesTable extends Component {
       <table className="responsive-table highlight">
         <thead>
           <tr>
-              <th>Beskrivelse</th>
-              <th>Pris</th>
+              <th className="primary-text mdc-typography--subheading2"><b>Beskrivelse</b></th>
+              <th className="primary-text mdc-typography--subheading2"><b>Pris</b></th>
           </tr>
         </thead>
         <tbody>
           {
             this.props.rows.map((row) =>
-              <Row description={row.description} price={row.price}/>
+              <Row description={row.description} price={row.price} currency={row.currency}/>
             )
           }
         </tbody>

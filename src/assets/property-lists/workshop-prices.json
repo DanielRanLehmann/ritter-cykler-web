@@ -1,78 +1,116 @@
 [
   {
     "description": "Time pris",
-    "price": "600,-"
+    "price": "600",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Start pris fra",
-    "price": "100,-"
+    "price": "100",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for lille service, excl dæmper/hydr. Bremse/hjulopret",
-    "price": "400,-"
+    "price": "400",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for stort service, dæmper/hydr. Bremse",
-    "price": "800,-"
+    "price": "800",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for montering af slange fra",
-    "price": "125,-"
+    "price": "125",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for montering af slange barnevognshjul fra",
-    "price": "50,-"
+    "price": "50",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for montering ad dæk + slange fra",
-    "price": "200,-"
+    "price": "200",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for opretning pr. hjul fra",
-    "price": "300,-"
+    "price": "300",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for opretning af special hjul fra",
-    "price": "350,-"
+    "price": "350",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for opspænding af fælg og eger",
-    "price": "500,-"
+    "price": "500",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for montering af kæde + tandhjul fra",
-    "price": "300,-"
+    "price": "300",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for montering af kæde + krans fra",
-    "price": "350,-"
+    "price": "350",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for montering af krankboks fra",
-    "price": "500,-"
+    "price": "500",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for opgørelse af forsikrings sager skal betales ved indlevering, bliver fratrukket hvis cyklen laves her eller der en ny cykel.",
-    "price": "750,-"
+    "price": "750",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for udluftning ad skivebremser pr. Ende.",
-    "price": "300,-"
+    "price": "300",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for forgaffel eller dæmper service fra",
-    "price": "500,-"
+    "price": "500",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for udskiftning ad 3-5-7 gear komplet kabelboks fra",
-    "price": "100,-"
+    "price": "100",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for montering af helskærme fra",
-    "price": "250,-"
+    "price": "250",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   },
   {
     "description": "Arbejdsløn for udskiftning af styrfittings fra",
-    "price": "250,-"
+    "price": "250",
+    "languageTag": "da-DK",
+    "currency": "DKK"
   }
 ]

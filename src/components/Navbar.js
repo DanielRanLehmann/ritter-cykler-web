@@ -31,6 +31,7 @@ class Navbar extends Component {
       });
 
     }
+    // navbar class should be transparent.
     render() {
       return (
         <div>
@@ -54,8 +55,8 @@ class Navbar extends Component {
             <li><a className="black-text disabled" href="#!">Medarbejder</a></li>
           </ul>
 
-          <div className="navbar-fixed">
-            <nav className="transparent z-depth-0 nav-extended">
+          <div className="">
+            <nav className="grey darken-4 z-depth-0 nav-extended">
               <div className="nav-wrapper">
 
                 <NavLink to={'/'} className="brand-logo dark-primary-text title" activeClassName="active">Bike Shop</NavLink>
@@ -66,7 +67,7 @@ class Navbar extends Component {
                     <NavLink exact
                       key="home"
                       to="/"
-                      activeStyle={{ backgroundColor: "#212121", opacity: 0.65, color: 'white'}}
+                      activeStyle={{opacity: 0.65, color: 'white'}}
                       activeClassName="active">FORSIDE
                     </NavLink>
                   </li>
@@ -99,7 +100,7 @@ class Navbar extends Component {
                   </li>
 
                   <li>
-                    <a className="dropdown-button" data-activates='dropdown1'>MERE</a>
+                    <a className="dropdown-button" data-activates='dropdown1'>MERE<i className="material-icons right">arrow_drop_down</i></a>
                   </li>
                 </ul>
 

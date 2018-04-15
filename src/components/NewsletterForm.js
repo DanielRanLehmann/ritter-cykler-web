@@ -72,22 +72,6 @@ class NewsletterForm extends Component {
       }
 
       this.props.handleSubmit(e, subscriberData);
-
-      /*
-      const newSubscriberKey = fire.database().ref().child('newsletter-subscribers').push().key;
-
-      const updates = {};
-      updates['/newsletter-subscribers/' + newSubscriberKey] = subscriberData;
-
-      fire.database().ref().update(updates).then(() => {
-        this.setState({successfulFormCompletion: true})
-
-      }).catch(function(error) {
-        var $toastContent = $('<span>Ups! Der skete en fejl</span>').add($('<button onClick="this.handleSubmit; class="btn-flat toast-action">Prøv Igen</button>'));
-        Materialize.toast($toastContent, 10000);
-      });
-      */
-
     }
 
     render() {
@@ -123,9 +107,9 @@ class NewsletterForm extends Component {
       return (
         <div className="row">
           <div className="col s12 m6">
-            <p className="green-text text-accent-3 caption">NYHEDSBREV</p>
-            <h5 className="white-text display-1">Ja Tak!<br/>Send mig gerne email&#39;s og sms&#39;er om sidste nyt fra RitterCykler</h5>
-            <p style={{"opacity": "0.70"}} className="white-text caption">* Vi opbevarer din e-mail adresse og dit telefonnummer sikkert og giver eller sælger dem ikke videre til tredjepart.</p>
+            <p className="green-text text-accent-3 mdc-typography--subheading2">NYHEDSBREV</p>
+            <h5 className="white-text mdc-typography--display2">Ja Tak!<br/>Send mig gerne email&#39;s og sms&#39;er om sidste nyt fra Bike Shop</h5>
+            <p className="dark-secondary-text white-text mdc-typography--subheading2">* Vi opbevarer din e-mail adresse og dit telefonnummer sikkert og giver eller sælger dem ikke videre til tredjepart.</p>
           </div>
           <div className="col s12 m6">
             <form>

@@ -14,8 +14,8 @@ class AboutUsBlurb extends Component {
     render() {
       return (
         <div className="center">
-          <h1 className="display-1 primary-text">Om os</h1>
-          <p className="secondary-text flow-text">Butikken blev grundlagt tilbage i 1977 af cykelrytteren Ole Ritter. I dag drives og ejes butikken af Bent Isaksen, der har over 30 års erfaring i branchen, og stadig arbejder tæt sammen med Ole Ritter om at skaffe det helt rigtige udvalg til kunderne.</p>
+          <h1 className="mdc-typography--display3 primary-text">Om os</h1>
+          <p className="secondary-text mdc-typography--headline">Butikken blev grundlagt tilbage i 1977 af cykelrytteren Ole Ritter. I dag drives og ejes butikken af Bent Isaksen, der har over 30 års erfaring i branchen, og stadig arbejder tæt sammen med Ole Ritter om at skaffe det helt rigtige udvalg til kunderne.</p>
         </div>
       );
     }

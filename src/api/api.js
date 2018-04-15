@@ -118,13 +118,12 @@ export function sendSurveyResponse(surveyId, responseData, callback) {
     throw("no response data found");
   }
 
-  fire.database().ref('/surveys/' + surveyId).once('value').then((snapshot) => {
+  fire.database().ref('/surveys/' + surveyId + "/totalResponses").once('value').then((snapshot) => {
     if (!snapshot.exists()) {
       throw("survey not found with id: " + this.staet.surveyId);
     }
 
-    const surveyData = snapshot.val();
-    const totalResponses = surveyData.totalResponses;
+    const totalResponses = snapshot.val();
 
     var newResponseKey = fire.database().ref().child('survey-responses').push().key;
 
