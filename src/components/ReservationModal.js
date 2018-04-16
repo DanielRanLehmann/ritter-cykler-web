@@ -52,6 +52,11 @@ class ReservationModal extends Component {
 
   handleReservation(e) {
 
+    var preferredPickupAt = $('#preferred-pickup-date').val();
+    if (preferredPickupAt === "") {
+      preferredPickupAt = null;
+    }
+
     // this needs to be updated slightly.
     const reservationData = {
       "createdAt": new Date().getTime(),
@@ -61,7 +66,7 @@ class ReservationModal extends Component {
       "lastName": this.state.lastName,
       "email": this.state.email,
       "phone": this.state.phone,
-      "preferredPickupDate": $('#preferred-pickup-date').val(),
+      "preferredPickupDate": preferredPickupAt,
       "qty": this.state.qty,
       "productSize": this.props.selectedSize,
       "total": (this.props.product.discountPrice * this.state.qty),
@@ -87,8 +92,8 @@ class ReservationModal extends Component {
       $('.datepicker').pickadate({
          selectMonths: true,
          selectYears: 1,
-         format: 'yyyy-mm-dd',
-         formatSubmit: 'yyyy-mm-dd',
+         format: 'dd mmmm, yyyy',
+         formatSubmit: 'dd mmmm, yyyy',
          min: minDate,
          max: maxDate,
          today: 'Today',
@@ -146,8 +151,8 @@ class ReservationModal extends Component {
     return (
       <div id="product-reservation-modal" className="white modal modal-fixed-footer z-depth-0">
             <div className="modal-content">
-              <h4 className="primary-text headline">Reserver</h4>
-              <p className="secondary-text body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h4 className="text-primary text-bold text-title-1">Reserver</h4>
+              <p className="text-secondary text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
               <form className="col s12">
                <div className="row">

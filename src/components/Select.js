@@ -45,12 +45,12 @@ class Select extends Component {
       return (
         // use second elem in tuple to set disabled style
         <div>
-          <select ref={field => this.field = field} defaultValue={this.state.selectedOption}>
+          <select ref={field => this.field = field} defaultValue={this.state.selectedOption} disabled={this.props.selectDisabled}>
              <option value={"placeholder"} disabled selected>{this.props.placeholder}</option>
              {
                Object.values(this.state.options).map((option, index) =>
-                 <option value={option[0]} disabled>
-                   <a className="black-text">{option[0]}</a>
+                 <option value={option.value} disabled={option.disabled}>
+                   {option.text}
                 </option>
                )
              }

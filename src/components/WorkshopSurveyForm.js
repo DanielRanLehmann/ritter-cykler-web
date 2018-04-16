@@ -75,7 +75,7 @@ function CheckboxesSection(props) {
 
   return (
     <div>
-      <h4 className="primary-text text-subhead"><b>{sectionPrefix} Kan du fortælle mere om din oplevelse?</b></h4>
+      <h4 className="text-primary text-body text-bold"><b>{sectionPrefix} Kan du fortælle mere om din oplevelse?</b></h4>
       {form}
     </div>
   );
@@ -164,8 +164,8 @@ class WorkshopSurveyForm extends Component {
         return (
           <div>
             <div className="section">
-              <h4 className="primary-text text-subhead"><b>Tak for din feedback!</b></h4>
-              <p className="primary-text text-subhead">Vi vil bruge denne information til at forbedre vores service yderligere.</p>
+              <h4 className="text-primary text-body text-bold"><b>Tak for din feedback!</b></h4>
+              <p className="text-primary text-body">Vi vil bruge denne information til at forbedre vores service yderligere.</p>
             </div>
           </div>
         );
@@ -173,8 +173,8 @@ class WorkshopSurveyForm extends Component {
         return (
           <div>
             <div className="section">
-              <h4 className="primary-text text-subhead"><b>Ups! Der opstod en fejl</b></h4>
-              <p className="primary-text text-subhead">Prøv at genindlæs siden og prøv at indsend din feedback igen.</p>
+              <h4 className="text-primary text-body text-bold"><b>Ups! Der opstod en fejl</b></h4>
+              <p className="text-primary text-body">Prøv at genindlæs siden og prøv igen</p>
             </div>
           </div>
         );
@@ -190,7 +190,7 @@ class WorkshopSurveyForm extends Component {
       <div className="section">
 
         <div className="section">
-          <h4 className="primary-text text-subhead"><b>Allerede haft din cykel repareret hos os? Hvad syntes du om den service du fik?</b></h4>
+          <h4 className="text-primary text-body text-bold"><b>Allerede haft din cykel repareret hos os? Hvad syntes du om den service du fik?</b></h4>
 
           <form action="#">
             <p>
@@ -209,7 +209,7 @@ class WorkshopSurveyForm extends Component {
           <CheckboxesSection checkBoxLabels={this.checkBoxLabels} toggleCheckbox={this.toggleCheckbox} selectedOption={this.state.selectedOption}/>
         </div>
         <div className="section">
-          <h4 className="primary-text text-subhead"><b>Er der noget yderligere vi kan gøre for at forbedre vores service?</b></h4>
+          <h4 className="text-primary text-body text-bold"><b>Er der noget yderligere vi kan gøre for at forbedre vores service?</b></h4>
           <form className="col s12">
             <div className="row">
               <div className="input-field col s12 m10 l8">

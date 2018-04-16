@@ -171,11 +171,12 @@ class ProductDetails extends Component {
 
     var selectSizeField = null;
 
-    var reserveBtnStyle = null;
-    var reserveBtn = null;
-    var reserveBtnDisabled = null;
-    var reserveBtnDisabled = false;
-    var reserveBtnClass = "z-depth-0 green accent-3 waves-effect waves-light btn modal-trigger";
+    var reservationBtnStyle = null;
+    var initialBtnPadding = null;
+    var reservationBtn = null;
+    var reservationBtnDisabled = null;
+    var reservationBtnDisabled = false;
+    var reservationBtnClass = "z-depth-0 green accent-3 waves-effect waves-light btn modal-trigger";
     var _isSelectedSizeSoldout = this.state.isSelectedSizeSoldout;
 
     var carousel = null;
@@ -189,16 +190,13 @@ class ProductDetails extends Component {
       this.state.product.sizes.forEach((size) => {
         const soldout = this.state.product.qty[size] == 0;
         const disabled = soldout ? "disabled" : null
-        sizeOptions.push([size + " " + (soldout ? "(udsolgt)" : null), soldout]);
+        sizeOptions.push({
+          "value": size,
+          "text": size + " " + (soldout ? "(udsolgt)" : ""),
+          "disabled": soldout
+        });
 
-        console.log(sizeOptions)
-        /*
-        sizeOptions.push(
-          <option value={size} disabled>
-            <a className="black-text">{size} {soldout ? "(udsolgt)" : null}</a>
-         </option>
-        );
-        */
+        // size + " " + (soldout ? "(udsolgt)" : null)
 
       });
 
@@ -208,26 +206,29 @@ class ProductDetails extends Component {
             <Select onSelection={(e) => {this.handleSizeChange(e.target.value)} }
                     options={sizeOptions} // [text, soldout] # like a tuple.
                     placeholder={"Vælg størrelse"}
+                    selectDisabled={!this.state.product.inStock}
             />
           </div>
         </div>
 
+
     } else {
-      reserveBtnStyle = {"marginTop": "1.5rem"};
+      reservationBtnStyle = {};
+      initialBtnPadding = <br></br>
     }
 
     // STATE OF RESERVATION BUTTON
-    reserveBtnDisabled = (!this.state.product.inStock || _isSelectedSizeSoldout)
+    reservationBtnDisabled = (!this.state.product.inStock || _isSelectedSizeSoldout)
 
-    if (reserveBtnDisabled || (selectSizeField && this.state.selectedSize === "Vælg størrelse")) {
-      reserveBtnClass += " disabled"
+    if (reservationBtnDisabled || (selectSizeField && this.state.selectedSize === "Vælg størrelse")) {
+      reservationBtnClass += " disabled"
     }
 
-    var reserveBtnText = !_isSelectedSizeSoldout ? "Reservér" : "Udsolgt";
-    reserveBtn = <a style={reserveBtnStyle}
+    var reservationBtnText = (_isSelectedSizeSoldout || this.state.product.inStock) ? "Reservér" : "Udsolgt";
+    reservationBtn = <a style={reservationBtnStyle}
                     onClick={this.openReservationModal}
-                    className={reserveBtnClass}>
-                    {reserveBtnText}
+                    className={reservationBtnClass}>
+                    {reservationBtnText}
                   </a>
 
     // DISPLAY IMAGES IN CAROUSEL IF ANY EXISTS
@@ -243,8 +244,12 @@ class ProductDetails extends Component {
       mediaSection = <div className="section white">
         <div className="container">
           <div className="section">
-            <div className="video-container">
-              <iframe width="100%" height="480" src={_youtubeURL} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+            <div className="center">
+              <h5 className="text-primary text-title-1 text-bold">Se i aktion</h5>
+              <br></br>
+              <div className="video-container">
+                <iframe width="100%" height="480" src={_youtubeURL} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -276,8 +281,8 @@ class ProductDetails extends Component {
               <div className="row">
                 <div className="col s12 l6">
                 <p className="caption amber-text text-accent-4">{this.state.product.isNew ? "Nyhed" : null}</p>
-                <h5 className="primary-text text-headline">{this.state.product.name}</h5>
-                <h5 className="primary-text text-thin-headline">
+                <h5 className="text-primary text-large-title text-bold">{this.state.product.name}</h5>
+                <h5 className="text-primary text-title-3">
                   <FormattedNumber
                       style='currency'
                       currency={this.state.product.currency}
@@ -287,11 +292,11 @@ class ProductDetails extends Component {
 
                 {selectSizeField}
 
-                <div style={{"paddingTop": "0px"}} className="row">
-                  <div className="left">
-                    {reserveBtn}
-                  </div>
-                </div>
+                {initialBtnPadding}
+                {reservationBtn}
+                <br></br>
+                <br></br>
+
 
                 <ReservationModal
                   handleSubmit={this.handleReservationSubmit}
@@ -299,9 +304,7 @@ class ProductDetails extends Component {
                   selectedSize={this.state.selectedSize}
                 />
 
-                <div style={{"paddingTop": "4px"}}>
-                  <p className="secondary-text text-subhead"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring til os på 45 87 66 01</p>
-                </div>
+                <p className="text-secondary text-body"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring til os på 45 87 66 01</p>
 
                 <div className="divider"></div>
 
@@ -318,18 +321,18 @@ class ProductDetails extends Component {
         {mediaSection}
 
         <div className="section container row">
-            <h5 className="primary-text text-headline">Produkt Information</h5>
+            <h5 className="text-primary text-title-1 text-bold">Produkt Information</h5>
             <div className="divider"></div>
 
             <div className="section">
               <div className="col s12">
                 <div className="row">
                   <div className="col l3 hide-on-med-and-down">
-                    <h5 className="primary-text text-subhead"><b>Overblik</b></h5>
+                    <h5 className="text-primary text-title-2">Overblik</h5>
                   </div>
                   <div className="col s12 l8 offset-l1">
-                    <h5 className="hide-on-large-only primary-text text-subhead"><b>Overblik</b></h5>
-                    <p className="primary-text text-subhead">{this.state.product.descriptionText}</p>
+                    <h5 className="hide-on-large-only text-title-2">Overblik</h5>
+                    <p className="text-primary text-body">{this.state.product.descriptionText}</p>
                   </div>
 
                 </div>
@@ -339,11 +342,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text text-subhead"><b>Highlights</b></h5>
+                  <h5 className="text-title-2">Highlights</h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text text-subhead"><b>Highlights</b></h5>
-                  <ul className="primary-text text-subhead">
+                  <h5 className="hide-on-large-only text-title-2">Highlights</h5>
+                  <ul className="text-primary text-body">
                   {
                     this.state.product.highlightTags.map((tag) =>
                       <li>{tag}</li>
@@ -358,11 +361,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text text-subhead"><b>Lagde du mærke til?</b></h5>
+                  <h5 className="text-title-2">Lagde du mærke til?</h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text text-subhead"><b>Lagde du mærke til?</b></h5>
-                  <p className="primary-text text-subhead">{this.state.product.didYouNoticeText}</p>
+                  <h5 className="hide-on-large-only text-title-2">Lagde du mærke til?</h5>
+                  <p className="text-primary text-body">{this.state.product.didYouNoticeText}</p>
                 </div>
 
               </div>
@@ -371,11 +374,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text text-subhead"><b>Forslået brug</b></h5>
+                  <h5 className="text-title-2">Forslået brug</h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text text-subhead"><b>Forslået brug</b></h5>
-                  <p className="primary-text text-subhead">{this.state.product.recommendedText}</p>
+                  <h5 className="hide-on-large-only text-title-2">Forslået brug</h5>
+                  <p className="text-primary text-body">{this.state.product.recommendedText}</p>
                 </div>
 
               </div>
@@ -384,11 +387,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text text-subhead"><b>Ud af boksen</b></h5>
+                  <h5 className="text-title-2">Ud af boksen</h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text text-subhead"><b>Ud af kassen</b></h5>
-                  <ul className="primary-text text-subhead">
+                  <h5 className="hide-on-large-only text-title-2">Ud af kassen</h5>
+                  <ul className="text-primary text-body">
                   {
                     this.state.product.outOfTheBoxTags.map((tag) =>
                       <li>{tag}</li>
@@ -403,11 +406,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text text-subhead"><b>Tekniske specifikationer</b></h5>
+                  <h5 className="text-title-2">Tekniske specifikationer</h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text text-subhead"><b>Tekniske specifikationer</b></h5>
-                  <ul className="primary-text text-subhead">
+                  <h5 className="hide-on-large-only text-title-2">Tekniske specifikationer</h5>
+                  <ul className="text-primary text-body">
                   {
                     this.state.product.techSpecTags.map((tag) =>
                       <li>{tag}</li>
@@ -421,11 +424,11 @@ class ProductDetails extends Component {
             <div className="col s12">
               <div className="row">
                 <div className="col l3 hide-on-med-and-down">
-                  <h5 className="primary-text text-subhead"><b>Fabrikant information</b></h5>
+                  <h5 className="text-title-2">Fabrikant information</h5>
                 </div>
                 <div className="col s12 l8 offset-l1">
-                  <h5 className="hide-on-large-only primary-text text-subhead"><b>Fabrikant information</b></h5>
-                  <ul className="primary-text text-subhead">
+                  <h5 className="hide-on-large-only text-title-2">Fabrikant information</h5>
+                  <ul className="text-primary text-body">
                   {
                     this.state.product.manifacturerInfoTags.map((tag) =>
                       <li>{tag}</li>
@@ -440,7 +443,7 @@ class ProductDetails extends Component {
 
           <div className="section container">
 
-          <h5 className="primary-text text-headline">
+          <h5 className="text-primary text-title-1 text-bold">
             Kommentarer
           </h5>
 

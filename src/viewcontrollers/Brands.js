@@ -27,16 +27,20 @@ class Brands extends Component {
     return (
       <div>
 
-        <div className="white section">
+        <div className="section white">
           <div className="container">
-            <div className="row">
-              <div className="col s12 m12 l10 xl6">
-                <h6 className="text-display-1 green-text text-accent-3">Mærker</h6>
-                <span className="primary-text text-subhead">Vi fører følgende mærker i butikken</span>
-              </div>
+          <div className="row">
+            <div className="col s12 m12 l10 xl6">
+              <h6 className="text-large-title green-text text-accent-3 text-bold">Mærker</h6>
+              <span className="text-primary text-body">Vi fører følgende mærker i butikken</span>
             </div>
+            </div>
+            <div className="divider"></div>
           </div>
+        </div>
 
+
+        <div className="white section">
           <div className="container">
             <BrandsGridList tiles={brandsData}/>
           </div>

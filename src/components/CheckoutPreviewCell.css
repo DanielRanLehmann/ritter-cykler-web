@@ -1,0 +1,15 @@
+#CheckoutPreviewCell {
+  padding: 24px, 24px, 24px, 24px;
+}
+
+#CheckoutPreviewCellContent {
+  padding-top: 24px;
+  border-radius: 2.5px;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#CheckoutPreviewCellTotal {
+  text-decoration: underline;
+}

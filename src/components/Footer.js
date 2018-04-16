@@ -26,34 +26,36 @@ class Footer extends Component {
             <div className="section">
               <div className="row">
                 <div className="col l6 s12">
-                  <h5 className="black-text primary-text text-subhead"><b>Kontakt</b></h5>
-                  <p className="black-text primary-text text-subhead"><i className="left inline-small-icon material-icons green-text text-accent-3">location_on</i>Lyngby Storcenter 88, 2800 Kongens Lyngby</p>
-                  <p className="black-text primary-text text-subhead"><i className="left inline-small-icon material-icons green-text text-accent-3">phone</i>45 87 66 01</p>
-                  <p className="black-text primary-text text-subhead"><i className="left inline-small-icon material-icons green-text text-accent-3">email</i>info@rittercykler.dk</p>
-                  <p className="black-text primary-text text-subhead"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lørdag og Søndag 10:00 – 17:00 </p>
+                  <h5 className="text-primary text-title-3 text-bold">Kontakt</h5>
+                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">location_on</i>Lyngby Storcenter 88, 2800 Kongens Lyngby</p>
+                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">phone</i>45 87 66 01</p>
+                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">email</i>info@rittercykler.dk</p>
+                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lørdag og Søndag 10:00 – 17:00 </p>
                 </div>
                 <div className="col l4 offset-l2 s12">
-                  <h5 className="black-text primary-text text-subhead"><b>Links</b></h5>
+                  <h5 className="text-primary text-title-3 text-bold"><b>Links</b></h5>
                   <ul>
-                    <li><Link to={'/maerker'} className="text-subhead green-text text-accent-3" activeClassName="active">Mærker</Link></li>
-                    <li><Link to={'/vaerksted-og-priser'} className="text-subhead green-text text-accent-3" activeClassName="active">Værksted Og Priser</Link></li>
-                    <li><Link to={'/kontakt'} className="text-subhead green-text text-accent-3" activeClassName="active">Kontakt</Link></li>
-                    <li><Link to={'/reklamation-og-returregler'} className="text-subhead green-text text-accent-3" activeClassName="active">Reklamation og Returregler</Link></li>
-                    <li><Link to={'/om-os'} className="text-subhead green-text text-accent-3" activeClassName="active">Om os</Link></li>
+                    <li><Link to={'/maerker'} className="text-body green-text text-accent-3" activeClassName="active">Mærker</Link></li>
+                    <li><Link to={'/vaerksted-og-priser'} className="text-body green-text text-accent-3" activeClassName="active">Værksted Og Priser</Link></li>
+                    <li><Link to={'/kontakt'} className="text-body green-text text-accent-3" activeClassName="active">Kontakt</Link></li>
+                    <li><Link to={'/reklamation-og-returregler'} className="text-body green-text text-accent-3" activeClassName="active">Reklamation og Returregler</Link></li>
+                    <li><Link to={'/om-os'} className="text-body green-text text-accent-3" activeClassName="active">Om os</Link></li>
                   </ul>
                 </div>
               </div>
             </div>
 
             <div className="section center-align">
-              <h6 className="black-text primary-text text-title logo">Bike Shop</h6>
-              <p className="black-text secondary-text text-subhead">Butikken blev grundlagt tilbage i 1977 af cykelrytteren Ole Ritter. I dag drives og ejes butikken af Bent Isaksen, der har over 30 års erfaring i branchen, og stadig arbejder tæt sammen med Ole Ritter om at skaffe det helt rigtige udvalg til kunderne.</p>
+              <h6 className="text-primary logo text-title-1">Bike Shop</h6>
+              <br></br>
+              <p className="text-primary text-body">Vi bytter alle nye og ikke ibrugtagene varer i 14 dage efter købs dato mod forevisning af gyldig kvittering, til et tilgodebevis eller penge retur. Dette gælder ikke bestilte varer.</p>
+              <br></br>
               <div className="row">
                 <div className="col s1 offset-s5">
-                  <i className="grey-text small icon ion-social-facebook"></i>
+                  <a href="https://www.facebook.com/rittercykler/" target="_blank" style={{fontSize: "30px"}} className="grey-text fa fa-facebook"></a>
                 </div>
                 <div className="col s1">
-                  <i className="grey-text small icon ion-social-instagram"></i>
+                  <a href="https://www.instagram.com/rittercykler/" target="_blank" style={{fontSize: "30px"}} className="grey-text fa fa-instagram"></a>
                 </div>
               </div>
             </div>

@@ -15,7 +15,8 @@ import WelcomeBlurb from '../components/WelcomeBlurb.js';
 import ReservationPromoTable from '../components/ReservationPromoTable.js';
 import NewsletterForm from '../components/NewsletterForm.js';
 
-import productsData from '../assets/property-lists/test-products.json';
+import productsData from '../assets/property-lists/test-products.json'; // remove this soon.
+
 import ProductGridList from '../components/ProductGridList.js';
 
 import * as api from '../api/api.js';
@@ -183,7 +184,7 @@ class Home extends Component {
 
         <div className="section white">
           <div className="container">
-            <h3 className="primary-text text-headline">Udvalgte tilbud</h3>
+            <h3 className="text-primary text-title-1 text-bold">Udvalgte tilbud</h3>
             <div className="divider"></div>
             {productSection}
           </div>

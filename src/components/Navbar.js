@@ -59,12 +59,13 @@ class Navbar extends Component {
             <nav className="grey darken-4 z-depth-0 nav-extended">
               <div className="nav-wrapper">
 
-                <NavLink to={'/'} className="brand-logo dark-primary-text title" activeClassName="active">Bike Shop</NavLink>
+                <NavLink to={'/'} className="brand-logo" activeClassName="active">Bike Shop</NavLink>
                 <a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
 
                 <ul className="navlinks right hide-on-med-and-down">
                   <li>
                     <NavLink exact
+
                       key="home"
                       to="/"
                       activeStyle={{opacity: 0.65, color: 'white'}}
@@ -74,6 +75,7 @@ class Navbar extends Component {
 
                   <li>
                     <NavLink
+
                       key="brands"
                       to="/maerker"
                       activeStyle={{opacity: 0.65, color: 'white'}}
@@ -83,6 +85,7 @@ class Navbar extends Component {
 
                   <li>
                     <NavLink
+
                       key="workshop"
                       to="/vaerksted-og-priser"
                       activeStyle={{ opacity: 0.65, color: 'white'}}
@@ -92,6 +95,7 @@ class Navbar extends Component {
 
                   <li>
                     <NavLink
+
                       key="contact"
                       to="/kontakt"
                       activeStyle={{ opacity: 0.65, color: 'white'}}
@@ -100,7 +104,7 @@ class Navbar extends Component {
                   </li>
 
                   <li>
-                    <a className="dropdown-button" data-activates='dropdown1'>MERE<i className="material-icons right">arrow_drop_down</i></a>
+                    <a className=" dropdown-button" data-activates='dropdown1'>MERE<i className="material-icons right">arrow_drop_down</i></a>
                   </li>
                 </ul>
 

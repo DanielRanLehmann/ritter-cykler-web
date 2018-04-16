@@ -1,0 +1,131 @@
+/*
+    by Daniel Lehmann
+    based on Appple's Typography - Visual Design Guidelines
+    https://developer.apple.com/ios/human-interface-guidelines/visual-design/typography/
+*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+.text-dark-primary {
+  color: rgba(255,255,255,1.0) !important;
+}
+
+.text-dark-secondary {
+  color: rgba(255,255,255,.70) !important;
+}
+
+.text-primary {
+  color: rgba(0,0,0,.87) !important;
+}
+
+.text-secondary {
+  color: rgba(0,0,0,.54) !important;
+}
+
+.text-thin {
+  font-weight: 300 !important;
+}
+
+.text-bold {
+  font-weight: 500 !important;
+}
+
+.text-large-title-ax5 {
+  font-size: 60px !important;
+  font-weight: 400;
+  line-height: 70px !important;
+}
+
+.text-large-title-ax4 {
+  font-size: 56px !important;
+  font-weight: 400;
+  line-height: 66px !important;
+}
+
+.text-large-title-ax3 {
+  font-size: 52px !important;
+  font-weight: 400;
+  line-height: 61px !important;
+}
+
+.text-large-title-ax2 {
+  font-size: 48px !important;
+  font-weight: 400;
+  line-height: 57px !important;
+}
+
+.text-large-title-ax1 {
+  font-size: 44px !important;
+  font-weight: 400;
+  line-height: 52px !important;
+}
+
+.text-large-title {
+  font-size: 33px !important;
+  font-weight: 400;
+  line-height: 40px !important;
+}
+
+.text-title-1 {
+  font-size: 27px !important;
+  font-weight: 400;
+  line-height: 33px !important;
+}
+
+.text-title-2 {
+  font-size: 21px !important;
+  font-weight: 400;
+  line-height: 26px !important;
+}
+
+.text-title-3 {
+  font-size: 19px !important;
+  font-weight: 400;
+  line-height: 24px !important;
+}
+
+.text-headline {
+  font-size: 16px !important;
+  font-weight: 500;
+  line-height: 21px !important;
+}
+
+.text-body {
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 21px !important;
+}
+
+.text-callout {
+  font-size: 15px !important;
+  font-weight: 400;
+  line-height: 20px !important;
+}
+
+.text-subhead {
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 19px !important;
+}
+
+.text-footnote {
+  font-size: 12px !important;
+  font-weight: 400;
+  line-height: 16px !important;
+}
+
+.text-caption-1 {
+  font-size: 11px !important;
+  font-weight: 400;
+  line-height: 13px !important;
+}
+
+.text-caption-2 {
+  font-size: 11px !important;
+  font-weight: 400;
+  line-height: 13px !important;
+}
