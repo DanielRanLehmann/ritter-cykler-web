@@ -1,3 +1,14 @@
 video {
   width: 100%;
 }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.row.flex .cell {
+  width: "100%";
+  margin-left: 0px;
+}

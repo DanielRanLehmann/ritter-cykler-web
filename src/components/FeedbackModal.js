@@ -138,14 +138,11 @@ class FeedbackModal extends Component {
 
     return (
       <div id="feedback-modal" className="white modal modal-fixed-footer z-depth-0">
-              <div className="section grey darken-4 valign-wrapper">
-                <div className="container">
-                  <h4 className="left-align white-text dark-primary-text title">Send Feedback</h4>
-                </div>
+              <div style={{"paddingLeft": "24px", "paddingRight": "24px", "height": "64px"}} className="grey darken-4 valign-wrapper">
+                  <h5 style={{"fontSize": "27px", "fontWeight": "400"}} className="text-dark-primary">Send Feedback</h5>
               </div>
 
             <div className="modal-content">
-
               <form className="col s12">
                <div className="row">
                  <div className="input-field col s12">

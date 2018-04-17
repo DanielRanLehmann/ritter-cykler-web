@@ -30,7 +30,7 @@ class Footer extends Component {
                   <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">location_on</i>Lyngby Storcenter 88, 2800 Kongens Lyngby</p>
                   <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">phone</i>45 87 66 01</p>
                   <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">email</i>info@rittercykler.dk</p>
-                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lørdag og Søndag 10:00 – 17:00 </p>
+                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>Lørdag og Søndag 10:00 – 17:00 </p>
                 </div>
                 <div className="col l4 offset-l2 s12">
                   <h5 className="text-primary text-title-3 text-bold"><b>Links</b></h5>

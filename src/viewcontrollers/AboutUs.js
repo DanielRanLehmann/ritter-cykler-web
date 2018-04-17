@@ -61,14 +61,15 @@ class AboutUs extends Component {
           <div className="container">
             <h1 className="center text-primary text-title-1 text-bold">Mange tilfredse kunder</h1>
             <p className="center text-primary text-body">Ris og ros er altid velkommen</p>
-            <div className="row">
+            <div className="row flex">
               {
                 storeReviewsData.map((review) =>
-                  <div className="col s12 m6 l4">
+                  <div className="col s12 m6 l4 cell">
                     <ReviewCard
                       starRating={review.starRating}
                       body={review.body}
                       author={review.author}
+                      source={review.source}
                     />
                   </div>
                 )

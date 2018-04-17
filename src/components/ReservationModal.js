@@ -51,6 +51,7 @@ class ReservationModal extends Component {
   }
 
   handleReservation(e) {
+    e.preventDefault();
 
     var preferredPickupAt = $('#preferred-pickup-date').val();
     if (preferredPickupAt === "") {
@@ -73,7 +74,9 @@ class ReservationModal extends Component {
       "currency": this.props.product.currency,
     }
 
+    $('.modal').modal('close');
     this.props.handleSubmit(e, reservationData);
+
   }
 
   componentDidMount() {
@@ -124,7 +127,7 @@ class ReservationModal extends Component {
       maxQTY = this.props.product.qty[_selectedSize];
 
       qtyField = <div className="input-field inline">
-                    <input style={{"width": "100px"}} value={this.state.qty} onChange={this.handleQTYChange} id="qty" type="number" className="validate" min={minQTY.toString()} max={maxQTY.toString()} />
+                    <input style={{"width": "100px"}} value={this.state.qty} onChange={this.handleQTYChange} id="qty" type="number" className="validate" min={minQTY.toString()} max={maxQTY.toString()} required="" aria-required="true"/>
                   </div>
     }
 
@@ -136,7 +139,7 @@ class ReservationModal extends Component {
                                             selectedSize={_selectedSize} />
     }
 
-    var reserveBtnClass = "modal-action modal-close waves-effect green-text text-accent-3 btn-flat";
+    var reserveBtnClass = "waves-effect green-text text-accent-3 btn-flat";
 
     if (!this.state.firstName ||
         !this.state.lastName ||
@@ -146,7 +149,8 @@ class ReservationModal extends Component {
         (this.state.qty < minQTY || this.state.qty > maxQTY)) {
       reserveBtnClass += " disabled"
     }
-    var reserveBtn = <a onClick={this.handleReservation} className={reserveBtnClass}>Reservér</a>
+    var reserveBtn =  <button className={reserveBtnClass} form="reservation-form" type="submit" name="action">Reservér</button>
+    // <a onClick={this.handleReservation} className={reserveBtnClass}>Reservér</a>
 
     return (
       <div id="product-reservation-modal" className="white modal modal-fixed-footer z-depth-0">
@@ -154,29 +158,29 @@ class ReservationModal extends Component {
               <h4 className="text-primary text-bold text-title-1">Reserver</h4>
               <p className="text-secondary text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-              <form className="col s12">
+              <form id="reservation-form" className="col s12" onSubmit={this.handleReservation}>
                <div className="row">
                  <div className="input-field col s12 m6">
-                   <input value={this.state.firstName} onChange={this.handleFirstNameChange} id="first-name" type="text" className="validate"/>
+                   <input value={this.state.firstName} onChange={this.handleFirstNameChange} id="first-name" type="text" className="validate" required="" aria-required="true"/>
                    <label htmlFor="first-name">Fornavn *</label>
                  </div>
                  <div className="input-field col s12 m6">
-                   <input value={this.state.lastName} onChange={this.handleLastNameChange} id="last-name" type="text" className="validate"/>
+                   <input value={this.state.lastName} onChange={this.handleLastNameChange} id="last-name" type="text" className="validate" required="" aria-required="true"/>
                    <label htmlFor="last-name">Efternavn *</label>
                  </div>
                </div>
 
                <div className="row">
                  <div className="input-field col s12">
-                   <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate"/>
-                   <label htmlFor="email">Email *</label>
+                   <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate" required="" aria-required="true"/>
+                   <label htmlFor="email" data-error="Ugyldig email">Email *</label>
                  </div>
                </div>
 
                <div className="row">
                  <div className="input-field col s12">
-                   <input value={this.state.phone} onChange={this.handlePhoneChange} id="phone" type="number" className="validate"/>
-                   <label htmlFor="phone">Mobil nr.</label>
+                   <input value={this.state.phone} onChange={this.handlePhoneChange} id="phone" type="tel" className="validate"/>
+                   <label htmlFor="phone" data-error="Ugyldig mobil nr.">Mobil nr.</label>
                  </div>
                </div>
 
@@ -189,7 +193,7 @@ class ReservationModal extends Component {
 
                <div className="row">
                   <div className="col s12">
-                    Antal Varer:
+                    Antal Varer *:
                     {qtyField}
                   </div>
                 </div>

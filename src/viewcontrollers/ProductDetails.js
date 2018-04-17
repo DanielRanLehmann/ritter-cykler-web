@@ -21,6 +21,8 @@ import * as api from '../api/api.js';
 
 import {FormattedNumber} from 'react-intl';
 
+import NotFound from './NotFound.js';
+
 class ProductDetails extends Component {
   constructor(props) {
     super(props);
@@ -40,6 +42,7 @@ class ProductDetails extends Component {
       },
       imageURLs: [],
       isLoading: true,
+      productExists: null,
       helmet: null
     };
 
@@ -71,6 +74,7 @@ class ProductDetails extends Component {
     api.sendReservation(reservation, success => {
       if (success) {
           Materialize.toast("Tak! " + this.state.product.name + " er reserveret til dig.", 4000);
+          // should reload product details because qty has changed.
       }
 
     }).catch(function(error) {
@@ -92,20 +96,6 @@ class ProductDetails extends Component {
             // document.title = product.name + " - Ritter Cykler";
             this.product = product;
 
-            if (this.product.imageNames && this.product.imageNames.length > 0) {
-
-              for (var i = 0; i < this.product.imageNames.length; i++) {
-                const imageName = this.product.imageNames[i];
-                api.asyncFetchProductImageURL(product.id, imageName, imageURL => {
-                  this.imageURLs.push(imageURL)
-                  if (i == (this.product.length - 1)) {
-                    this.setState({imageURLs: this.imageURLs});
-                  }
-                });
-              }
-            }
-            // where should I put the set statement?
-
             let _selectedSize = this.product.sizes.includes("*") ? "*" : "Vælg størrelse";
             let _sizeSoldout = null;
             if (_selectedSize) {
@@ -116,18 +106,24 @@ class ProductDetails extends Component {
               product: this.product,
               selectedSize: _selectedSize,
               isSelectedSizeSoldout: _sizeSoldout,
-              isLoading:false
+              isLoading:false,
+              productExists: true
             });
 
           } else {
             document.title = "Ritter Cykler";
-            console.log("product does not exist in database.")
+
+            this.setState({
+              productExists: false,
+              isLoading: false
+            });
           }
         }).catch( (error) => {
           console.log(this.errorMessage = 'Error - ' + error.message)
         });
 
     } else {
+      console.log("this is called.")
       // else a 404 error has occured. push to 404 scene or detail that the product was not found.
       // push to 404 error?
       // or redirect to 'home' -> /
@@ -167,6 +163,12 @@ class ProductDetails extends Component {
             </div>
           </div>
         )
+    }
+
+    if (!this.state.productExists) {
+      return (
+        <NotFound />
+      )
     }
 
     var selectSizeField = null;
@@ -304,7 +306,8 @@ class ProductDetails extends Component {
                   selectedSize={this.state.selectedSize}
                 />
 
-                <p className="text-secondary text-body"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring til os på 45 87 66 01</p>
+                <p className="hide-on-med-and-up text-secondary text-body"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller ring til os på 45 87 66 01</p>
+                <p className="hide-on-small-only text-secondary text-body"><i className="left inline-small-icon material-icons">chat_bubble</i> Få hjælp til at købe produktet. <a className="green-text text-accent-3" href="https://messenger.com">Skriv på Messenger</a> eller<br/>ring til os på 45 87 66 01</p>
 
                 <div className="divider"></div>
 

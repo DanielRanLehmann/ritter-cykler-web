@@ -1,20 +1,4 @@
-@media only screen and (min-width: 481px) {
-  #feedback-modal {
-    width: 80% !important;
-    height: 75% !important;
-  }
-}
-
-@media only screen and (min-width: 769px) {
-  #feedback-modal {
-    width: 50% !important;
-    height: 75% !important;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  #feedback-modal {
-    width: 25% !important;
-    height: 75% !important;
-  }
+#feedback-modal {
+  width: 360px !important;
+  height: 75% !important;
 }

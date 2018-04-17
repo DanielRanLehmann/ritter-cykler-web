@@ -168,9 +168,9 @@ class Home extends Component {
         </Helmet>
 
 
-        <HeroBanner imgSrc={heroImages["img_01"]} height={500} />
+        <HeroBanner imgSrc={heroImages["img_06"]} height={500} />
 
-        <div className="section grey lighten-5">
+        <div style={{"backgroundColor": "#F9F9FA"}} className="section">
           <div className="container">
             <FeaturedBrands />
           </div>

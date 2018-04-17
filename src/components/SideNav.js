@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-// import './SideNav.css';
+import './SideNav.css';
 
 import $ from 'jquery';
 import Materialize from 'materialize-css';

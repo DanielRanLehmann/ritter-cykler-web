@@ -57,20 +57,16 @@ class WorkshopAndPrices extends Component {
 
       <div>
 
-      <div className="section white">
-        <div className="container">
-
-        <div className="row">
-          <div className="col s12 m12 l10 xl6">
-            <h6 className="text-large-title green-text text-accent-3 text-bold">Værksted og Priser</h6>
-            <span className="text-primary text-body">Alt hvad vi kan reparer, laves til næste hverdag kl.17. Cykler kan indleveres i hele åbningstiden. Når cyklen er færdig, bliver der sendt en sms til kunden. Cyklen skal afhentes <b>senest</b> 30 min før lukketid.</span>
-          </div>
-        </div>
-        </div>
-      </div>
-
-
         <div className="white section">
+
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m12 l10 xl6">
+                <h6 className="text-large-title green-text text-accent-3 text-bold">Værksted og Priser</h6>
+                <span className="text-primary text-body">Alt hvad vi kan reparer, laves til næste hverdag kl.17. Cykler kan indleveres i hele åbningstiden. Når cyklen er færdig, bliver der sendt en sms til kunden. Cyklen skal afhentes <b>senest</b> 30 min før lukketid.</span>
+              </div>
+            </div>
+          </div>
 
           <div className="container">
             <WorkshopPricesTable rows={workshopPricesData} />

@@ -7,6 +7,7 @@ import Contact from './Contact';
 import ProductDetails from './ProductDetails';
 import ComplaintsAndReturnPolicies from './ComplaintsAndReturnPolicies';
 import AboutUs from './AboutUs.js';
+import NotFound from './NotFound.js'; 
 
 const Main = () => (
   <main>
@@ -18,6 +19,7 @@ const Main = () => (
       <Route path='/produkt/:productId' component={ProductDetails}/>
       <Route path='/reklamation-og-returregler' component={ComplaintsAndReturnPolicies}/>
       <Route path='/om-os' component={AboutUs} />
+      <Route path="*" component={NotFound} />
     </Switch>
   </main>
 )

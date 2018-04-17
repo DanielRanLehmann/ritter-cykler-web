@@ -44,11 +44,9 @@ class HeroBanner extends Component {
     render() {
 
       return (
-        <div id="index-banner" className="parallax-container">
+        <div id="index-banner" className="parallax-container valign-wrapper">
           <div className="section no-pad-bot">
             <div className="container">
-              <br></br>
-              <br></br>
               <h1 className="center text-large-title-ax1 text-thin text-dark-primary">Din forhandler inden for cykler og cykeludstyr</h1>
               <div className="row center">
                 <p className="white-text text-dark-primary text-title-3">Vores medarbejdere står klar til at hjælpe dig til at finde det udstyr eller den cykel, der passer netop dig.<br/> Hvad enten det er mountainbike, racer eller ny hverdagscykel.<br/> Vi rådgiver dig efter dine behov og vores erfaring.</p>
@@ -56,7 +54,7 @@ class HeroBanner extends Component {
             </div>
           </div>
           <div className="parallax">
-            <img src={this.props.imgSrc} alt="Unsplashed background img 1"/>
+            <img className="object-fit-cover" src={this.props.imgSrc} alt="Butikken"/>
           </div>
         </div>
       );

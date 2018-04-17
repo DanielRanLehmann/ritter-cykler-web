@@ -15,24 +15,24 @@ class FeaturedBrands extends Component {
 
     render() {
       return (
-        <div className="row">
+        <div style={{"marginBottom": "0px"}} className="row">
           <div className="col s6 m4 l2">
-            <img className="displayed" width="100%" src={require('../assets/brands/greyscale/colnago-logo.png')}/>
+            <img style={{"objectFit": "scale-down"}} height="44px" src={require('../assets/brands/greyscale/colnago-logo.png')}/>
           </div>
           <div className="col s6 m4 l2">
-            <img className="displayed" width="100%" src={require('../assets/brands/greyscale/nalini-logo.png')}/>
+            <img style={{"top": "0", "bottom": "0", "objectFit": "scale-down"}} height="44px" src={require('../assets/brands/greyscale/nalini-logo.png')}/>
           </div>
           <div className="col s6 m4 l2">
-            <img className="displayed" width="100%" src={require('../assets/brands/greyscale/nutcase-logo.png')}/>
+            <img style={{"objectFit": "scale-down"}} height="44px" src={require('../assets/brands/greyscale/nutcase-logo.png')}/>
           </div>
           <div className="col s6 m4 l2">
-            <img className="displayed" width="100%" src={require('../assets/brands/greyscale/trek-logo.png')}/>
+            <img style={{"objectFit": "scale-down"}} height="44px" src={require('../assets/brands/greyscale/trek-logo.png')}/>
           </div>
           <div className="col s6 m4 l2">
-            <img className="displayed" width="100%" src={require('../assets/brands/greyscale/giro-logo.png')}/>
+            <img style={{"objectFit": "scale-down"}} height="44px" src={require('../assets/brands/greyscale/giro-logo.png')}/>
           </div>
           <div className="col s6 m4 l2">
-            <img className="displayed" width="100%" src={require('../assets/brands/greyscale/mbk-logo.png')}/>
+            <img style={{"objectFit": "scale-down"}} height="44px" src={require('../assets/brands/greyscale/mbk-logo.png')}/>
           </div>
         </div>
       );

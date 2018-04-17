@@ -73,7 +73,7 @@ body {
 .text-title-1 {
   font-size: 27px !important;
   font-weight: 400;
-  line-height: 33px !important;
+  line-height: 64px !important;
 }
 
 .text-title-2 {
@@ -103,7 +103,7 @@ body {
 .text-callout {
   font-size: 15px !important;
   font-weight: 400;
-  line-height: 20px !important;
+  line-height: 20px;
 }
 
 .text-subhead {

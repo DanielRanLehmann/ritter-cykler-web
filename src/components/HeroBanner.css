@@ -8,6 +8,11 @@
   width: 100%;
 }
 
+.object-fit-cover {
+  width: 100%;
+  object-fit: cover; /*magic*/
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;

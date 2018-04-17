@@ -17,14 +17,12 @@ class NewsletterForm extends Component {
         firstName: null,
         lastName: null,
         email: null,
-        phone: null,
         successfulFormCompletion: false
       }
 
       this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
       this.handleLastNameChange = this.handleLastNameChange.bind(this);
       this.handleEmailChange = this.handleEmailChange.bind(this);
-      this.handlePhoneChange = this.handlePhoneChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -44,31 +42,13 @@ class NewsletterForm extends Component {
       this.setState({email: e.target.value});
     }
 
-    handlePhoneChange = (e) => {
-      this.setState({phone: e.target.value});
-    }
-
     handleSubmit(e) {
       e.preventDefault()
-
-      var _phone = null;
-      if (this.state.phone) {
-        _phone = this.state.phone.strip('\s');
-        if(!_phone.match(/[a-z]/i)) {
-          if (!_phone.hasPrefix('(+45)') || !_phone.hasPrefix('+45')) {
-            _phone = "+45" + _phone
-          }
-          console.log(_phone)
-        } else {
-          console.log("invalid phone no")
-        }
-      }
       const subscriberData = {
         "createdAt": new Date().getTime(),
         "firstName": this.state.firstName.capitalize(),
         "lastName": this.state.lastName.capitalize(),
-        "email": this.state.email,
-        "phone": _phone
+        "email": this.state.email
       }
 
       this.props.handleSubmit(e, subscriberData);
@@ -78,11 +58,7 @@ class NewsletterForm extends Component {
 
       if (this.props.successfulFormCompletion) {
         var successDescription = "Du vil løbende få masser af spændende tilbud over email";
-        if (this.state.phone) {
-          successDescription +=  " og telefonen.";
-        }
-
-        successDescription += ". Du kan til hver en tid afmelder vores nyhedsbrev ved blot at klikke på linket \'afmeld\' nederst i bunden i en af vores mails.";
+        successDescription += ". Du kan afmelde vores nyhedsbrev ved at klikke på linket \'afmeld\' nederst i bunden i en af vores mails.";
 
         return (
           <div>
@@ -99,9 +75,9 @@ class NewsletterForm extends Component {
       if ((this.state.firstName) &&
           (this.state.lastName) &&
           (this.state.email)) {
-        subscribeBtn = <a onClick={this.handleSubmit} id="subscribe-newsletter-btn" className="z-depth-0 green accent-3 waves-effect waves-light btn modal-trigger" href="#modal1">Tilmeld</a>
+        subscribeBtn = <button id="subscribe-newsletter-btn" className="z-depth-0 green accent-3 waves-effect waves-light btn" type="submit" name="action">Tilmeld</button>
       } else {
-        subscribeBtn = <a onClick={this.handleSubmit} id="subscribe-newsletter-btn" className="disabled z-depth-0 green accent-3 waves-effect waves-light btn modal-trigger" href="#modal1">Tilmeld</a>
+        subscribeBtn = <button id="subscribe-newsletter-btn" className="disabled z-depth-0 green accent-3 waves-effect waves-light btn" type="submit" name="action">Tilmeld</button>
       }
 
       return (
@@ -109,32 +85,34 @@ class NewsletterForm extends Component {
           <div className="col s12 m6">
             <p className="green-text text-accent-3 text-callout">NYHEDSBREV</p>
             <h5 className="white-text text-large-title">Ja Tak!<br/>Send mig gerne email&#39;s og sms&#39;er om sidste nyt fra Bike Shop</h5>
-            <p className="text-dark-secondary text-callout">* Vi opbevarer din e-mail adresse og dit telefonnummer sikkert og giver eller sælger dem ikke videre til tredjepart.</p>
+            <p className="text-dark-secondary text-callout">* Vi opbevarer din email adresse sikkert og giver eller sælger det ikke videre til nogen tredjepart.</p>
           </div>
           <div className="col s12 m6">
-            <form>
-              <div className="input-field col s12">
-                <input value={this.state.firstName} onChange={this.handleFirstNameChange} id="first_name" type="text" className="validate"/>
-                <label htmlFor="first_name">Fornavn *</label>
-              </div>
-              <div className="input-field col s12">
-                <input value={this.state.lastName} onChange={this.handleLastNameChange} id="last_name" type="text" className="validate"/>
-                <label htmlFor="last_name">Efternavn *</label>
+            <form onSubmit={this.handleSubmit}>
+
+              <div className="row">
+                <div className="input-field col s12">
+                  <input value={this.state.firstName} onChange={this.handleFirstNameChange} id="first_name" type="text" className="validate" required="" aria-required="true"/>
+                  <label htmlFor="first_name">Fornavn *</label>
+                </div>
               </div>
 
-              <div className="input-field col s12">
-                <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate"/>
-                <label htmlFor="email">Email *</label>
+              <div className="row">
+                <div className="input-field col s12">
+                  <input value={this.state.lastName} onChange={this.handleLastNameChange} id="last_name" type="text" className="validate" required="" aria-required="true"/>
+                  <label htmlFor="last_name">Efternavn *</label>
+                </div>
               </div>
 
-              <div className="input-field col s12">
-                <input value={this.state.phone} onChange={this.handlePhoneChange} id="phone" type="text" className="validate"/>
-                <label htmlFor="phone">Telefon</label>
+              <div className="row">
+                <div className="input-field col s12">
+                  <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate" required="" aria-required="true"/>
+                  <label htmlFor="email" data-error="Ugyldig email">Email *</label>
+                </div>
               </div>
-
               {subscribeBtn}
-
             </form>
+
           </div>
         </div>
       );

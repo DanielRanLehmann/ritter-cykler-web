@@ -65,7 +65,6 @@ class Navbar extends Component {
                 <ul className="navlinks right hide-on-med-and-down">
                   <li>
                     <NavLink exact
-
                       key="home"
                       to="/"
                       activeStyle={{opacity: 0.65, color: 'white'}}
@@ -104,7 +103,7 @@ class Navbar extends Component {
                   </li>
 
                   <li>
-                    <a className=" dropdown-button" data-activates='dropdown1'>MERE<i className="material-icons right">arrow_drop_down</i></a>
+                    <a className="dropdown-button" data-activates='dropdown1'>MERE<i className="material-icons right">arrow_drop_down</i></a>
                   </li>
                 </ul>
 

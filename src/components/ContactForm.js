@@ -87,9 +87,9 @@ class ContactForm extends Component {
 
       var sendBtn = null;
       if (this.state.firstName && this.state.lastName && this.state.email && this.state.message) {
-        sendBtn = <a onClick={this.handleSubmit} className="z-depth-0 green accent-3 waves-effect waves-light btn">Send</a>
+        sendBtn = <button className="z-depth-0 green accent-3 waves-effect waves-light btn" type="submit" name="action">Send</button>
       } else {
-        sendBtn = <a onClick={this.handleSubmit} className="disabled z-depth-0 green accent-3 waves-effect waves-light btn">Send</a>
+        sendBtn = <button className="disabled z-depth-0 green accent-3 waves-effect waves-light btn" type="submit" name="action">Send</button> 
       }
 
       return (
@@ -97,31 +97,30 @@ class ContactForm extends Component {
           <h6 className="text-primary text-title-2 text-bold">Send os en besked</h6>
           <p className="text-secondary text-body">Du kan forvente en svartid på 1-2 arbejdsdage.</p>
 
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="input-field col s6">
                 <input value={this.state.firstName} onChange={this.handleFirstNameChange} id="first_name" type="text" className="validate"/>
-                <label htmlFor="first_name">Fornavn</label>
+                <label htmlFor="first_name">Fornavn *</label>
               </div>
               <div className="input-field col s6">
                 <input value={this.state.lastName} onChange={this.handleLastNameChange} id="last_name" type="text" className="validate"/>
-                <label htmlFor="last_name">Efternavn</label>
+                <label htmlFor="last_name">Efternavn *</label>
               </div>
             </div>
 
             <div className="row">
               <div className="input-field col s12">
-                <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate"/>
-                <label htmlFor="email">Email</label>
+                <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate" required="" aria-required="true"/>
+                <label htmlFor="email" data-error="Ugyldig email">Email *</label>
               </div>
             </div>
 
             <div className="row">
               <div className="input-field col s12">
                 <select ref={subjectField => this.subjectField = subjectField} defaultValue={this.state.subject}>
+                  <option value="spørgsmål" selected>Spørgsmål</option>
                   <option value="regning">Regning</option>
-                  <option value="partnerskab">Partnerskab</option>
-                  <option value="spørgsmål">Spørgsmål</option>
                   <option value="andet">Andet</option>
                 </select>
                 <label>Emne</label>
@@ -130,12 +129,15 @@ class ContactForm extends Component {
 
             <div className="row">
               <div className="input-field col s12">
-                <textarea value={this.state.message} onChange={this.handleMessageChange} id="message-field" className="materialize-textarea"></textarea>
-                <label htmlFor="message-field">Besked</label>
+                <textarea value={this.state.message} onChange={this.handleMessageChange} id="message-field" className="materialize-textarea" required="" aria-required="true"></textarea>
+                <label htmlFor="message-field">Besked *</label>
               </div>
-              { sendBtn }
             </div>
+
+            { sendBtn }
+
           </form>
+
         </div>
       );
     }

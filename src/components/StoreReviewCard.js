@@ -41,8 +41,8 @@ class StoreReviewCard extends Component {
     return (
       <div className="left card-panel white z-depth-0">
         <Stars rating={this.props.starRating} />
-        <span className="text-primary text-body">{this.props.body}</span><br/><br/>
-        <span className="text-secondary text-body">{this.props.author}</span>
+        <span style={{"whiteSpace": "pre-line"}} className="text-primary text-body">{this.props.body}</span><br/><br/>
+        <span className="text-secondary text-body">{this.props.author} - {this.props.source}</span>
       </div>
     );
   }

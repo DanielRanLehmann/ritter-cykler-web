@@ -66,7 +66,6 @@ class Contact extends Component {
 
         <div className="section white">
 
-
           <div className="container">
           <div className="row">
             <div className="col s12 l6">
@@ -76,7 +75,7 @@ class Contact extends Component {
                   <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">location_on</i>Lyngby Storcenter 88, 2800 Kongens Lyngby *</p>
                   <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">phone</i>45 87 66 01</p>
                   <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">email</i>info@rittercykler.dk</p>
-                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lørdag og Søndag 10:00 – 17:00 </p>
+                  <p className="text-primary text-body"><i className="left inline-small-icon material-icons green-text text-accent-3">access_time</i>Mandag – Fredag 10:00 – 19:00<br/>Lørdag og Søndag 10:00 – 17:00 </p>
                 </div>
                 <br></br>
                 <p className="text-secondary text-callout">* Ritter Cykler er beliggende på det 'lille torv' i Lyngbystorcenter. Det lille torv er placeret i den sydøstlige del af centeret ud til Klampenborgvej.<a className="green-text text-accent-3" href={require('../assets/lyngbystorcenter-centeroversigt-februar-2018.png')}> Se kort over lyngbystorcenter</a></p>

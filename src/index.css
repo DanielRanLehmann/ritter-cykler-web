@@ -86,15 +86,11 @@ body {
 
 .fixed-action-btn-left {
   position: fixed;
-  left: 23px;
-  bottom: 23px;
+  left: 4px;
+  bottom: 4px;
   padding-top: 15px;
   margin-bottom: 0;
   z-index: 997;
-}
-
-icon > .ion-icon {
-  font-size: 24px !important;
 }
 
 .container {
@@ -120,4 +116,20 @@ icon > .ion-icon {
   left: 50% !important;
   right: 50% !important;
   bottom: 50% !important;
+}
+
+.fa {
+  color: #9E9E9E !important;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+
+.fa:hover {
+  color: #F44336 !important;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
 }
