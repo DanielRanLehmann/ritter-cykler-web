@@ -169,8 +169,6 @@ class Home extends Component {
 
         <HeroBanner imgSrc={heroImages["img_06"]} height={500} />
 
-        <a className="waves-effect waves-light btn">button</a>
-
         <div style={{"backgroundColor": "#F9F9FA"}} className="section">
           <div className="container">
             <FeaturedBrands />

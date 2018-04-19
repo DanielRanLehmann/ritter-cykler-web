@@ -8,13 +8,9 @@ var fetch = require('isomorphic-fetch')
 var btoa = require('btoa');
 var crypto = require('crypto');
 
-// NOTE: mailchimp's API uri differs depending on your location. us6 is the east coast.
-
-// use environment variables to store mailchimp api, key and
-// the dc, listID.
-const MAILCHIMP_API_KEY = '43273fb9e2ec216925ece3665a2e0e03-us14'
-var dc = 'us14'
-var listId = 'afebbb30ea'
+const MAILCHIMP_API_KEY = functions.config().mailchimp.apikey
+var dc = functions.config().mailchimp.dc
+var listId = functions.config().mailchimp.listid
 
 var async = require("async");
 var nodemailer = require('nodemailer');
@@ -34,6 +30,8 @@ var db = admin.database();
 
 exports.reservation = functions.database.ref('/reservations/{$reservation}').onWrite(event => {
    const reservationData = event.data.val();
+   console.log("reservationData")
+   console.log(reservationData)
 
    var productRef = db.ref("products/" + reservationData.productId);
    productRef.once("value", (snapshot) => {
@@ -58,22 +56,22 @@ exports.reservation = functions.database.ref('/reservations/{$reservation}').onW
         var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'danielran11@gmail.com',
-            pass: 'Daniel11'
+            user: functions.config().auth.user,
+            pass: auth.pass
           }
         });
 
         emails = [
           {
-            from: 'danielran11@gmail.com', // fixed.
-            to: 'danielran11@gmail.com', // should be in production: enquiryData.email,
+            from: functions.config().auth.user,
+            to: functions.config().auth.user, // should be in production: enquiryData.email,
             subject: "Bekræftelse af din reservation - Bike Shop",
             html: '<p>' + 'Hej ' + reservationData.firstName + ' ' + reservationData.lastName + "," + '<br/>' + 'Vi har modtaget din reservation.' + '<br/><br/>' + '<b>Reserveret produkt:</b> ' + reservationData.productName + '<br/>' + 'Størrelse: ' + reservationData.productSize + '<br/>' + 'Antal: ' + reservationData.qty.toString() + '<br/>' +  'Total: ' + reservationData.total + ' ' + reservationData.currency + '<br/>' + 'I tilfælde af uoverenstemmelse med reservationen kan du skrive til os på EMAIL_ADDRESSE eller ringe til os på TELFON_NR' + '<br/><br/>' + 'Med venlig hilsen,' + '<br/>' + 'Bike Shop' + '</p>'
           },
 
           {
-            from: 'danielran11@gmail.com', // fixed.
-            to: 'danielran11@gmail.com',
+            from: functions.config().auth.user,
+            to: functions.config().auth.user,
             subject: "Reservation - " + reservationData.productName,
             html: '<p>' + '<b>Kunde Info:</b> ' + '<br/>' + 'Navn: ' + reservationData.firstName + ' ' + reservationData.lastName + '<br/>' + 'Email: ' + reservationData.email  + '<br/><br/>' + '<b>Produkt Info:</b> ' + '<br/>' + 'Produkt: ' + reservationData.productName + '<br/>' + 'Størrelse: ' + reservationData.productSize + '<br/>' + 'Antal: ' + reservationData.qty.toString() + '<br/>' +  'Total: ' + reservationData.total + ' ' + reservationData.currency + '</p>'
           }
@@ -161,8 +159,8 @@ exports.sendContactEnquiryEmail = functions.database.ref('/contact-enquiries/{$e
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'danielran11@gmail.com',
-      pass: 'Daniel11'
+      user: functions.config().auth.user,
+      pass: functions.config().auth.pass
     }
   });
 

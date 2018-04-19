@@ -19,7 +19,7 @@ class ProductGridList extends Component {
     render() {
       return (
         <div>
-          <div className="row">
+          <div className="row flex">
             {
               this.props.products.map((product) =>
                 <div className="col s12 m6 l4 xl3">
