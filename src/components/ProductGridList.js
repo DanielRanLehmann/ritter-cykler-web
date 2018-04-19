@@ -31,6 +31,7 @@ class ProductGridList extends Component {
                     openModal={this.openModal}
                     imageURL={product.imageURLs[0]}
                     name={product.name}
+                    isNew={product.isNew}
                     normalPrice={product.normalPrice}
                     currencySymbol={product.currencySymbol}
                   />

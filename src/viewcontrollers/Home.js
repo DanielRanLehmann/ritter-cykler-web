@@ -21,7 +21,6 @@ import ProductGridList from '../components/ProductGridList.js';
 
 import * as api from '../api/api.js';
 
-import '@material/typography/dist/mdc.typography.css'; // place in either index.js or app.js
 import HeroBanner from '../components/HeroBanner.js';
 
 import '../typography.css';
@@ -169,6 +168,8 @@ class Home extends Component {
 
 
         <HeroBanner imgSrc={heroImages["img_06"]} height={500} />
+
+        <a className="waves-effect waves-light btn">button</a>
 
         <div style={{"backgroundColor": "#F9F9FA"}} className="section">
           <div className="container">

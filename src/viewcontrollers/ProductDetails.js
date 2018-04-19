@@ -236,7 +236,12 @@ class ProductDetails extends Component {
     // DISPLAY IMAGES IN CAROUSEL IF ANY EXISTS
 
     if (this.state.product.imageURLs.length > 0) {
-      carousel = <Carousel carouselDidLoad={this.state.carouselDidLoad} imageURLs={this.state.product.imageURLs}/>;
+      var largeImgURLs = []
+      for (var imageURL in this.state.product.imageURLs) {
+        largeImgURLs.push(imageURL.large)
+      }
+
+      carousel = <Carousel carouselDidLoad={this.state.carouselDidLoad} imageURLs={largeImgURLs}/>;
     }
 
     // YOUTUBE URL PROVIDED?

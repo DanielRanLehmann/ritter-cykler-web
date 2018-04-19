@@ -18,7 +18,7 @@ class ReservationModal extends Component {
       lastName: null,
       email: null,
       phone: null,
-      qty: "1"
+      qty: 1
     };
 
     this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -47,7 +47,7 @@ class ReservationModal extends Component {
   }
 
   handleQTYChange = (e) => {
-    this.setState({qty: e.target.value});
+    this.setState({qty: parseInt(e.target.value)});
   }
 
   handleReservation(e) {
@@ -70,13 +70,12 @@ class ReservationModal extends Component {
       "preferredPickupDate": preferredPickupAt,
       "qty": this.state.qty,
       "productSize": this.props.selectedSize,
-      "total": (this.props.product.discountPrice * this.state.qty),
+      "total": parseFloat(this.props.product.discountPrice * this.state.qty),
       "currency": this.props.product.currency,
     }
 
     $('.modal').modal('close');
     this.props.handleSubmit(e, reservationData);
-
   }
 
   componentDidMount() {

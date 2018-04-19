@@ -56,7 +56,7 @@ class Navbar extends Component {
           </ul>
 
           <div className="">
-            <nav className="grey darken-4 z-depth-0 nav-extended">
+            <nav className="z-depth-0 nav-extended">
               <div className="nav-wrapper">
 
                 <NavLink to={'/'} className="brand-logo" activeClassName="active">Bike Shop</NavLink>

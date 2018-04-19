@@ -23,8 +23,8 @@ class ProductGridListTile extends Component {
       return (
         <div>
           <div onClick={ (e) => this.props.handleProductDetailClick(e, this.props.product) } style={{"cursor": "pointer"}} className="product-grid-list-tile product-tile center-align">
-            <img height="235px" style={{"max_height": "235px", "object-fit": "cover", "overflow": "hiddden"}} className="product-cell-image" width="100%" src={this.props.product.imageURLs[0]}/>
-            <p className="amber-text text-accent-4 text-callout">NYHED</p>
+            <img height="235px" style={{"max_height": "235px", "object-fit": "cover", "overflow": "hiddden"}} className="product-cell-image" width="100%" src={this.props.product.imageURLs[0].medium}/>
+            <p className="amber-text text-accent-4 text-callout">{this.props.isNew ? "NYHED": null}</p>
             <h5 className="truncate text-primary text-headline">{this.props.name}</h5>
             <p className="primary-text text-headline">
               <FormattedNumber

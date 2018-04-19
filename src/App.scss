@@ -1,0 +1,30 @@
+$roboto-font-path: "~materialize-css/dist/fonts/roboto/";
+
+@import "materialize-css/sass/components/color";
+@import "materialize-css/sass/components/variables";
+
+$primary-color: #212121 !important;
+$secondary-color: #212121 !default; // !important crashes
+
+$link-color: color("light-blue", "darken-1") !default;
+
+@import 'materialize-css/sass/materialize';
+
+/***
+$primary-color: #212121;
+$primary-color-light: false !default;
+$primary-color-dark: false !default;
+@if not $primary-color-light {
+  $primary-color-light: lighten($primary-color, 15%);
+}
+@if not $primary-color-dark {
+  $primary-color-dark: darken($primary-color, 15%);
+}
+$secondary-color: color("teal", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+
+$link-color: color("light-blue", "darken-1") !default;
+***/
+
+/*** More variables not shown here.. ***/

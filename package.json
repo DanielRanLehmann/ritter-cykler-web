@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@material/typography": "^0.34.0",
     "firebase": "^4.11.0",
     "google-map-react": "^0.33.0",
     "jquery": "2.2.4",
     "json-loader": "^0.5.7",
     "materialize-css": "^0.100.2",
+    "node-sass-chokidar": "^1.2.2",
+    "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-cookie-banner": "^3.0.0",
     "react-dom": "^16.2.0",
@@ -22,8 +23,12 @@
     "react-visibility-sensor": "^3.11.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
